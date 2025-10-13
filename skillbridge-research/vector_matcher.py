@@ -1,9 +1,3 @@
-# vector_matcher.py
-# Semantic matcher using SentenceTransformer embeddings.
-# - Encodes individual skill phrases for all users (teaches and learns)
-# - For each teacher->learner pair, computes max cosine similarity between any teach skill and any learn skill
-# - If similarity >= threshold, adds an edge weighted by semantic score + rating + timezone score
-# - Uses max weight matching to produce disjoint, high-quality recommendations
 
 from __future__ import annotations
 from typing import List, Dict, Tuple
@@ -37,7 +31,7 @@ except ImportError as e:
     ) from e
 
 
-# Load the model once (small, fast, and semantically strong for short text)
+
 _MODEL_NAME = "all-MiniLM-L6-v2"
 _model = SentenceTransformer(_MODEL_NAME)
 
@@ -59,7 +53,6 @@ def _parse_timezone_offset(tz: str) -> float:
 
 def _timezone_score(tz_a: str, tz_b: str) -> float:
     diff = abs(_parse_timezone_offset(tz_a) - _parse_timezone_offset(tz_b))
-    # Map difference in hours to a score in [0, 5], dropping by 1 per hour up to 5 hours
     return max(0.0, 5.0 - min(diff, 5.0))
 
 
@@ -83,7 +76,6 @@ def get_vector_matches(
         List of pairs (user_id_a, user_id_b) sorted by the matched edge weight desc.
         Each pair is a sorted tuple (min_id, max_id) to avoid duplicates.
     """
-    # Pre-encode skills for each user
     teach_vecs: Dict[str, np.ndarray] = {}
     learn_vecs: Dict[str, np.ndarray] = {}
 
@@ -93,12 +85,10 @@ def get_vector_matches(
         teach_vecs[u["id"]] = _encode_skills(teaches)
         learn_vecs[u["id"]] = _encode_skills(learns)
 
-    # Build graph
     G = nx.Graph()
     user_ids = [u["id"] for u in users]
     id_to_user = {u["id"]: u for u in users}
 
-    # two partitions
     G.add_nodes_from(user_ids, bipartite=0)
     G.add_nodes_from([f"L::{uid}" for uid in user_ids], bipartite=1)
 
@@ -114,13 +104,13 @@ def get_vector_matches(
             l_vecs = learn_vecs[l_id]
             if l_vecs.size == 0:
                 continue
-            # Compute pairwise similarities and take max as the compatibility
+            
             sim_matrix = cosine_similarity(t_vecs, l_vecs)
             max_sim = float(np.max(sim_matrix)) if sim_matrix.size > 0 else 0.0
             if max_sim < min_skill_similarity:
                 continue
             tz_score = _timezone_score(teacher.get("timezone", "GMT+0"), learner.get("timezone", "GMT+0"))
-            # Weight scales semantic similarity to 0..100 and adds rating and timezone preference
+            
             weight = (max_sim * 100.0) + float(teacher.get("rating", 0)) + tz_score
             G.add_edge(t_id, f"L::{l_id}", weight=weight)
 
@@ -145,7 +135,6 @@ def get_vector_matches(
 
 
 if __name__ == "__main__":
-    # Simple smoke test
     import json
     from pathlib import Path
 

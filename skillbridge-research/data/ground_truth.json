@@ -1,18 +1,802 @@
 [
-  { "pair": ["user_01", "user_02"], "score": 3, "reason": "Bob learns Python; Alice teaches Python." },
-  { "pair": ["user_03", "user_04"], "score": 2, "reason": "Semantic: Dana teaches Node.js/Express; Charlie learns Node.js and teaches Web Dev." },
-  { "pair": ["user_05", "user_06"], "score": 3, "reason": "Direct cross-swap: 05 teaches Guitar and learns Cooking; 06 teaches Cooking and learns Guitar." },
-  { "pair": ["user_07", "user_08"], "score": 3, "reason": "Grace teaches Python/Data Science; Henry learns Python and teaches ML (two-way alignment via Python)." },
-  { "pair": ["user_09", "user_10"], "score": 2, "reason": "Semantic: Frontend Dev with React.js/Redux two-way relation." },
-  { "pair": ["user_11", "user_12"], "score": 2, "reason": "SQL/Databases to Data Engineering is related to AWS/DevOps." },
-  { "pair": ["user_12", "user_13"], "score": 3, "reason": "Direct: Leo learns Kubernetes; Maya teaches Kubernetes. Maya learns Docker; Leo teaches Docker." },
-  { "pair": ["user_14", "user_15"], "score": 1, "reason": "Okay: Cybersecurity and Network Engineering vs Mobile/UI is weakly related (low relevance)." },
-  { "pair": ["user_15", "user_16"], "score": 2, "reason": "Semantic: Mobile Development with Flutter and iOS Swift; Olivia learns UI design (some relation)." },
-  { "pair": ["user_17", "user_18"], "score": 3, "reason": "Direct cross: Quinn learns Illustration; Ruby teaches Illustration. Ruby learns Graphic Design; Quinn teaches it." },
-  { "pair": ["user_19", "user_20"], "score": 3, "reason": "Direct cross: Public Speaking and Project Management two-way trade." },
-  { "pair": ["user_01", "user_15"], "score": 1, "reason": "Weak: UI Design interest for Alice vs Olivia teaches UI design; but no reciprocal benefit." },
-  { "pair": ["user_03", "user_10"], "score": 1, "reason": "Okay: Web Dev and React/Redux loosely related, but directions not aligned." },
-  { "pair": ["user_07", "user_11"], "score": 1, "reason": "Okay: Data Science and Data Engineering field-adjacent but limited direct swap." },
-  { "pair": ["user_02", "user_09"], "score": 2, "reason": "Semantic: React.js teacher with Frontend learner and vice versa." },
-  { "pair": ["user_05", "user_19"], "score": 0, "reason": "Bad: Guitar vs Public Speaking/PM totally unrelated." }
+  {
+    "pair": [
+      "user_001",
+      "user_003"
+    ],
+    "score": 3,
+    "reason": "user_003 teaches React Native; user_001 learns React Native; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_001",
+      "user_008"
+    ],
+    "score": 3,
+    "reason": "user_001 teaches TensorFlow; user_008 learns TensorFlow; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_001",
+      "user_019"
+    ],
+    "score": 3,
+    "reason": "user_019 teaches Firebase; user_001 learns Firebase; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_001",
+      "user_021"
+    ],
+    "score": 3,
+    "reason": "user_021 teaches Firebase; user_001 learns Firebase; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_001",
+      "user_023"
+    ],
+    "score": 3,
+    "reason": "user_023 teaches React Native; user_001 learns React Native; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_001",
+      "user_031"
+    ],
+    "score": 3,
+    "reason": "user_031 teaches Firebase; user_001 learns Firebase; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_001",
+      "user_036"
+    ],
+    "score": 3,
+    "reason": "user_036 teaches React Native; user_001 learns React Native; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_001",
+      "user_039"
+    ],
+    "score": 3,
+    "reason": "user_039 teaches Firebase; user_001 learns Firebase; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_001",
+      "user_058"
+    ],
+    "score": 3,
+    "reason": "user_058 teaches Firebase; user_001 learns Firebase; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_001",
+      "user_061"
+    ],
+    "score": 3,
+    "reason": "user_061 teaches React Native; user_001 learns React Native; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_001",
+      "user_063"
+    ],
+    "score": 3,
+    "reason": "user_063 teaches Firebase; user_001 learns Firebase; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_001",
+      "user_066"
+    ],
+    "score": 3,
+    "reason": "user_066 teaches Android Development; user_001 learns Android Development; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_001",
+      "user_070"
+    ],
+    "score": 3,
+    "reason": "user_070 teaches Firebase; user_001 learns Firebase; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_001",
+      "user_071"
+    ],
+    "score": 3,
+    "reason": "user_071 teaches Android Development; user_001 learns Android Development; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_001",
+      "user_086"
+    ],
+    "score": 3,
+    "reason": "user_086 teaches React Native; user_001 learns React Native; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_001",
+      "user_088"
+    ],
+    "score": 3,
+    "reason": "user_088 teaches Android Development; user_001 learns Android Development; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_001",
+      "user_096"
+    ],
+    "score": 3,
+    "reason": "user_096 teaches Firebase; user_001 learns Firebase; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_001",
+      "user_099"
+    ],
+    "score": 3,
+    "reason": "user_099 teaches Firebase; user_001 learns Firebase; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_002",
+      "user_005"
+    ],
+    "score": 3,
+    "reason": "user_002 teaches Database Optimization; user_005 learns Database Optimization; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_002",
+      "user_025"
+    ],
+    "score": 3,
+    "reason": "user_025 teaches Data Engineering; user_002 learns Data Engineering; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_002",
+      "user_033"
+    ],
+    "score": 3,
+    "reason": "user_033 teaches Data Science; user_002 learns Data Science; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_002",
+      "user_042"
+    ],
+    "score": 3,
+    "reason": "user_042 teaches Data Engineering; user_002 learns Data Engineering; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_002",
+      "user_046"
+    ],
+    "score": 3,
+    "reason": "user_046 teaches Data Science; user_002 learns Data Science; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_002",
+      "user_055"
+    ],
+    "score": 3,
+    "reason": "user_055 teaches Data Engineering; user_002 learns Data Engineering; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_002",
+      "user_098"
+    ],
+    "score": 3,
+    "reason": "user_098 teaches Data Engineering; user_002 learns Data Engineering; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_003",
+      "user_013"
+    ],
+    "score": 3,
+    "reason": "user_013 teaches Python; user_003 learns Python; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_003",
+      "user_060"
+    ],
+    "score": 3,
+    "reason": "user_060 teaches PyTorch; user_003 learns PyTorch; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_003",
+      "user_087"
+    ],
+    "score": 3,
+    "reason": "user_087 teaches PyTorch; user_003 learns PyTorch; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_003",
+      "user_091"
+    ],
+    "score": 3,
+    "reason": "user_091 teaches PyTorch; user_003 learns PyTorch; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_004",
+      "user_005"
+    ],
+    "score": 3,
+    "reason": "user_004 teaches Database Design; user_005 learns Database Design; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_004",
+      "user_010"
+    ],
+    "score": 3,
+    "reason": "user_010 teaches Data Warehousing; user_004 learns Data Warehousing; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_004",
+      "user_024"
+    ],
+    "score": 3,
+    "reason": "user_024 teaches PostgreSQL; user_004 learns PostgreSQL; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_004",
+      "user_027"
+    ],
+    "score": 3,
+    "reason": "user_027 teaches Data Warehousing; user_004 learns Data Warehousing; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_004",
+      "user_028"
+    ],
+    "score": 3,
+    "reason": "user_028 teaches Data Warehousing; user_004 learns Data Warehousing; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_004",
+      "user_040"
+    ],
+    "score": 3,
+    "reason": "user_040 teaches PostgreSQL; user_004 learns PostgreSQL; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_004",
+      "user_044"
+    ],
+    "score": 3,
+    "reason": "user_044 teaches PostgreSQL; user_004 learns PostgreSQL; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_004",
+      "user_049"
+    ],
+    "score": 3,
+    "reason": "user_049 teaches PostgreSQL; user_004 learns PostgreSQL; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_004",
+      "user_073"
+    ],
+    "score": 3,
+    "reason": "user_073 teaches PostgreSQL; user_004 learns PostgreSQL; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_004",
+      "user_083"
+    ],
+    "score": 3,
+    "reason": "user_083 teaches PostgreSQL; user_004 learns PostgreSQL; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_004",
+      "user_094"
+    ],
+    "score": 3,
+    "reason": "user_094 teaches PostgreSQL; user_004 learns PostgreSQL; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_005",
+      "user_038"
+    ],
+    "score": 3,
+    "reason": "user_038 teaches Database Optimization; user_005 learns Database Optimization; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_005",
+      "user_044"
+    ],
+    "score": 3,
+    "reason": "user_005 teaches SQL; user_044 learns SQL; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_005",
+      "user_045"
+    ],
+    "score": 3,
+    "reason": "user_045 teaches Database Design; user_005 learns Database Design; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_005",
+      "user_064"
+    ],
+    "score": 3,
+    "reason": "user_064 teaches Database Design; user_005 learns Database Design; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_005",
+      "user_072"
+    ],
+    "score": 3,
+    "reason": "user_072 teaches Database Optimization; user_005 learns Database Optimization; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_005",
+      "user_081"
+    ],
+    "score": 3,
+    "reason": "user_081 teaches Database Optimization; user_005 learns Database Optimization; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_005",
+      "user_084"
+    ],
+    "score": 3,
+    "reason": "user_084 teaches Database Optimization; user_005 learns Database Optimization; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_005",
+      "user_100"
+    ],
+    "score": 3,
+    "reason": "user_100 teaches Database Design; user_005 learns Database Design; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_006",
+      "user_014"
+    ],
+    "score": 3,
+    "reason": "user_006 teaches REST APIs; user_014 learns REST APIs; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_007",
+      "user_013"
+    ],
+    "score": 3,
+    "reason": "user_007 teaches Vue.js; user_013 learns Vue.js; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_007",
+      "user_022"
+    ],
+    "score": 3,
+    "reason": "user_022 teaches Mobile UI; user_007 learns Mobile UI; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_007",
+      "user_032"
+    ],
+    "score": 3,
+    "reason": "user_032 teaches Flutter; user_007 learns Flutter; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_007",
+      "user_035"
+    ],
+    "score": 3,
+    "reason": "user_035 teaches Flutter; user_007 learns Flutter; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_007",
+      "user_056"
+    ],
+    "score": 3,
+    "reason": "user_056 teaches Swift; user_007 learns Swift; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_007",
+      "user_057"
+    ],
+    "score": 3,
+    "reason": "user_057 teaches Flutter; user_007 learns Flutter; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_007",
+      "user_085"
+    ],
+    "score": 3,
+    "reason": "user_085 teaches Mobile UI; user_007 learns Mobile UI; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_008",
+      "user_009"
+    ],
+    "score": 3,
+    "reason": "user_008 teaches AWS; user_009 learns AWS; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_009",
+      "user_015"
+    ],
+    "score": 3,
+    "reason": "user_009 teaches UI/UX Design; user_015 learns UI/UX Design; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_009",
+      "user_037"
+    ],
+    "score": 3,
+    "reason": "user_037 teaches CI/CD; user_009 learns CI/CD; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_009",
+      "user_050"
+    ],
+    "score": 3,
+    "reason": "user_050 teaches AWS; user_009 learns AWS; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_009",
+      "user_082"
+    ],
+    "score": 3,
+    "reason": "user_082 teaches CI/CD; user_009 learns CI/CD; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_011",
+      "user_020"
+    ],
+    "score": 3,
+    "reason": "user_011 teaches Microservices; user_020 learns Microservices; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_012",
+      "user_013"
+    ],
+    "score": 3,
+    "reason": "user_012 teaches Vue.js; user_013 learns Vue.js; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_013",
+      "user_026"
+    ],
+    "score": 3,
+    "reason": "user_026 teaches Vue.js; user_013 learns Vue.js; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_013",
+      "user_034"
+    ],
+    "score": 3,
+    "reason": "user_034 teaches Vue.js; user_013 learns Vue.js; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_013",
+      "user_041"
+    ],
+    "score": 3,
+    "reason": "user_041 teaches Angular; user_013 learns Angular; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_013",
+      "user_051"
+    ],
+    "score": 3,
+    "reason": "user_051 teaches Angular; user_013 learns Angular; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_013",
+      "user_076"
+    ],
+    "score": 3,
+    "reason": "user_076 teaches Angular; user_013 learns Angular; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_013",
+      "user_079"
+    ],
+    "score": 3,
+    "reason": "user_079 teaches Angular; user_013 learns Angular; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_014",
+      "user_015"
+    ],
+    "score": 3,
+    "reason": "user_014 teaches TypeScript; user_015 learns TypeScript; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_014",
+      "user_029"
+    ],
+    "score": 3,
+    "reason": "user_029 teaches REST APIs; user_014 learns REST APIs; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_014",
+      "user_048"
+    ],
+    "score": 3,
+    "reason": "user_048 teaches Backend Development; user_014 learns Backend Development; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_014",
+      "user_065"
+    ],
+    "score": 3,
+    "reason": "user_065 teaches Backend Development; user_014 learns Backend Development; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_014",
+      "user_068"
+    ],
+    "score": 3,
+    "reason": "user_068 teaches REST APIs; user_014 learns REST APIs; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_014",
+      "user_069"
+    ],
+    "score": 3,
+    "reason": "user_069 teaches Backend Development; user_014 learns Backend Development; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_014",
+      "user_074"
+    ],
+    "score": 3,
+    "reason": "user_074 teaches REST APIs; user_014 learns REST APIs; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_014",
+      "user_092"
+    ],
+    "score": 3,
+    "reason": "user_092 teaches REST APIs; user_014 learns REST APIs; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_015",
+      "user_017"
+    ],
+    "score": 3,
+    "reason": "user_017 teaches UI/UX Design; user_015 learns UI/UX Design; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_015",
+      "user_018"
+    ],
+    "score": 3,
+    "reason": "user_018 teaches UI/UX Design; user_015 learns UI/UX Design; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_015",
+      "user_020"
+    ],
+    "score": 3,
+    "reason": "user_015 teaches Express; user_020 learns Express; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_015",
+      "user_030"
+    ],
+    "score": 3,
+    "reason": "user_030 teaches UI/UX Design; user_015 learns UI/UX Design; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_015",
+      "user_052"
+    ],
+    "score": 3,
+    "reason": "user_052 teaches TypeScript; user_015 learns TypeScript; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_015",
+      "user_054"
+    ],
+    "score": 3,
+    "reason": "user_054 teaches UI/UX Design; user_015 learns UI/UX Design; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_015",
+      "user_059"
+    ],
+    "score": 3,
+    "reason": "user_059 teaches TypeScript; user_015 learns TypeScript; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_015",
+      "user_078"
+    ],
+    "score": 3,
+    "reason": "user_078 teaches UI/UX Design; user_015 learns UI/UX Design; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_015",
+      "user_089"
+    ],
+    "score": 3,
+    "reason": "user_089 teaches UI/UX Design; user_015 learns UI/UX Design; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_016",
+      "user_020"
+    ],
+    "score": 3,
+    "reason": "user_016 teaches Express; user_020 learns Express; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_017",
+      "user_053"
+    ],
+    "score": 3,
+    "reason": "user_053 teaches CSS; user_017 learns CSS; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_017",
+      "user_077"
+    ],
+    "score": 3,
+    "reason": "user_077 teaches CSS; user_017 learns CSS; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_017",
+      "user_097"
+    ],
+    "score": 3,
+    "reason": "user_097 teaches CSS; user_017 learns CSS; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_020",
+      "user_043"
+    ],
+    "score": 3,
+    "reason": "user_043 teaches Express; user_020 learns Express; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_020",
+      "user_046"
+    ],
+    "score": 3,
+    "reason": "user_020 teaches Microservices; user_046 learns Microservices; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_020",
+      "user_075"
+    ],
+    "score": 3,
+    "reason": "user_075 teaches Express; user_020 learns Express; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_020",
+      "user_093"
+    ],
+    "score": 3,
+    "reason": "user_093 teaches Express; user_020 learns Express; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_022",
+      "user_067"
+    ],
+    "score": 3,
+    "reason": "user_067 teaches Cloud Automation; user_022 learns Cloud Automation; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_031",
+      "user_047"
+    ],
+    "score": 3,
+    "reason": "user_047 teaches Django; user_031 learns Django; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_033",
+      "user_080"
+    ],
+    "score": 3,
+    "reason": "user_080 teaches Kubernetes; user_033 learns Kubernetes; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_033",
+      "user_095"
+    ],
+    "score": 3,
+    "reason": "user_095 teaches Kubernetes; user_033 learns Kubernetes; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_036",
+      "user_062"
+    ],
+    "score": 3,
+    "reason": "user_062 teaches Azure; user_036 learns Azure; semantic_score=1.00"
+  },
+  {
+    "pair": [
+      "user_041",
+      "user_090"
+    ],
+    "score": 3,
+    "reason": "user_090 teaches Docker; user_041 learns Docker; semantic_score=1.00"
+  }
 ]

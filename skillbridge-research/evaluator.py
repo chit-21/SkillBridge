@@ -1,5 +1,3 @@
-# evaluator.py
-# Orchestrates loading data, running matchers, and computing Precision@k.
 
 from __future__ import annotations
 
@@ -8,10 +6,9 @@ import argparse
 from pathlib import Path
 from typing import List, Tuple, Dict, Set
 
-# Local imports
+
 from bipartite_matcher import get_bipartite_matches
 
-# Vector matcher is optional; provide a friendly message if unavailable
 try:
     from vector_matcher import get_vector_matches
     _VECTOR_AVAILABLE = True
@@ -70,29 +67,31 @@ def evaluate_algorithm(name: str, rec_pairs: List[Tuple[str, str]], good_pairs: 
 
 def main():
     parser = argparse.ArgumentParser(description="Evaluate matching algorithms against ground truth")
-    parser.add_argument("--k", type=int, default=5, help="Precision@k (default 5)")
+    parser.add_argument("--k", type=int, default=100, help="Precision@k (default 100)")
     parser.add_argument("--min-score", type=int, default=2, help="Ground-truth score threshold for 'good' (default 2)")
     parser.add_argument("--vec-threshold", type=float, default=0.55, help="Vector matcher min skill similarity (default 0.55)")
     args = parser.parse_args()
 
-    # Load data
+
     users = _load_json(USERS_PATH)
     ground_truth = _load_ground_truth()
 
-    # Build set of good pairs (score >= args.min_score)
+  
     good_pairs = _good_pairs_set(ground_truth, min_score=args.min_score)
 
-    # Run Bipartite matcher
+    
     bipartite_results = get_bipartite_matches(users)
     evaluate_algorithm("Bipartite Graph Matcher", bipartite_results, good_pairs, k=args.k)
 
-    # Run Vector matcher (if available)
+    
     if _VECTOR_AVAILABLE:
         vector_results = get_vector_matches(users, min_skill_similarity=args.vec_threshold)
         evaluate_algorithm("Vector Embedding Matcher", vector_results, good_pairs, k=args.k)
     else:
         print("Vector Embedding Matcher skipped due to missing dependencies.")
         print("Install with: pip install sentence-transformers scikit-learn numpy networkx\n")
+    
+    
 
 
 if __name__ == "__main__":
