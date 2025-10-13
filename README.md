@@ -38,9 +38,9 @@ _Without this, later phases will either break or require expensive rewrites._
         - **Backend:** Node.js + Express for APIs.
         - **Real-time:** Socket.io for chat + signaling.
         - **Video:** WebRTC (native API or PeerJS wrapper).
-        - **Matching Engine:** Python microservice (NetworkX) for graph-based matching.
-        - **Database:** MongoDB Atlas for main storage, Redis for caching.
-        - **Deployment:** Vercel for frontend, Railway/Render for backend, MongoDB Atlas cloud DB.
+       
+        - **Database:** firestore for backend and authentication, Redis for caching.
+        - **Deployment:** Vercel for frontend, Railway/Render for backend
     - **Outcome:** All tech stack decisions locked.
 
 - **Database Schema Design**
@@ -73,10 +73,9 @@ _Without this, later phases will either break or require expensive rewrites._
     - Create Node.js project with Express.
     - Setup folder structure (`routes`, `controllers`, `models`, `middlewares`).
     - Add `.env` config, error handling middleware.
-    - **Dependencies:** express, mongoose, jsonwebtoken, bcrypt, dotenv, cors.
+    - **Dependencies:** express, dotenv, cors.
 - **Authentication System**
-    - JWT-based login/signup.
-    - Password hashing with bcrypt.
+    using firebase
     - Middleware for protected routes.
 - **User Profile & Skill Management**
     - `/skills` POST → Add teaching/learning skills.
@@ -92,7 +91,7 @@ _Without this, later phases will either break or require expensive rewrites._
         - Daily batch job (via cron).
     - **Dependencies:** requests (Node), flask/fastapi (Python), networkx.
 - **Database Setup**
-    - MongoDB Atlas connection.
+    - Firestore
     - Index skills and timezones for faster match search.
 - **Testing**
     - Test APIs using Postman.

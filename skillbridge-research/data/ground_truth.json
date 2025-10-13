@@ -1,0 +1,18 @@
+[
+  { "pair": ["user_01", "user_02"], "score": 3, "reason": "Bob learns Python; Alice teaches Python." },
+  { "pair": ["user_03", "user_04"], "score": 2, "reason": "Semantic: Dana teaches Node.js/Express; Charlie learns Node.js and teaches Web Dev." },
+  { "pair": ["user_05", "user_06"], "score": 3, "reason": "Direct cross-swap: 05 teaches Guitar and learns Cooking; 06 teaches Cooking and learns Guitar." },
+  { "pair": ["user_07", "user_08"], "score": 3, "reason": "Grace teaches Python/Data Science; Henry learns Python and teaches ML (two-way alignment via Python)." },
+  { "pair": ["user_09", "user_10"], "score": 2, "reason": "Semantic: Frontend Dev with React.js/Redux two-way relation." },
+  { "pair": ["user_11", "user_12"], "score": 2, "reason": "SQL/Databases to Data Engineering is related to AWS/DevOps." },
+  { "pair": ["user_12", "user_13"], "score": 3, "reason": "Direct: Leo learns Kubernetes; Maya teaches Kubernetes. Maya learns Docker; Leo teaches Docker." },
+  { "pair": ["user_14", "user_15"], "score": 1, "reason": "Okay: Cybersecurity and Network Engineering vs Mobile/UI is weakly related (low relevance)." },
+  { "pair": ["user_15", "user_16"], "score": 2, "reason": "Semantic: Mobile Development with Flutter and iOS Swift; Olivia learns UI design (some relation)." },
+  { "pair": ["user_17", "user_18"], "score": 3, "reason": "Direct cross: Quinn learns Illustration; Ruby teaches Illustration. Ruby learns Graphic Design; Quinn teaches it." },
+  { "pair": ["user_19", "user_20"], "score": 3, "reason": "Direct cross: Public Speaking and Project Management two-way trade." },
+  { "pair": ["user_01", "user_15"], "score": 1, "reason": "Weak: UI Design interest for Alice vs Olivia teaches UI design; but no reciprocal benefit." },
+  { "pair": ["user_03", "user_10"], "score": 1, "reason": "Okay: Web Dev and React/Redux loosely related, but directions not aligned." },
+  { "pair": ["user_07", "user_11"], "score": 1, "reason": "Okay: Data Science and Data Engineering field-adjacent but limited direct swap." },
+  { "pair": ["user_02", "user_09"], "score": 2, "reason": "Semantic: React.js teacher with Frontend learner and vice versa." },
+  { "pair": ["user_05", "user_19"], "score": 0, "reason": "Bad: Guitar vs Public Speaking/PM totally unrelated." }
+]

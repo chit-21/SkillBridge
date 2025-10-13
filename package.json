@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "bull": "^4.16.5",
-    "express-rate-limit": "^8.0.1"
-  }
-}

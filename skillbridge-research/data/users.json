@@ -1,0 +1,162 @@
+[
+  {
+    "id": "user_01",
+    "name": "Alice",
+    "teaches": ["Python", "Data Analysis"],
+    "learns": ["UI Design"],
+    "rating": 4.8,
+    "timezone": "GMT+0"
+  },
+  {
+    "id": "user_02",
+    "name": "Bob",
+    "teaches": ["JavaScript", "React.js"],
+    "learns": ["Python"],
+    "rating": 4.5,
+    "timezone": "GMT+0"
+  },
+  {
+    "id": "user_03",
+    "name": "Charlie",
+    "teaches": ["Web Development"],
+    "learns": ["Node.js"],
+    "rating": 4.9,
+    "timezone": "GMT+1"
+  },
+  {
+    "id": "user_04",
+    "name": "Dana",
+    "teaches": ["Node.js", "Express"],
+    "learns": ["Web Engineering"],
+    "rating": 4.7,
+    "timezone": "GMT+1"
+  },
+  {
+    "id": "user_05",
+    "name": "Ethan",
+    "teaches": ["Guitar"],
+    "learns": ["Cooking"],
+    "rating": 4.2,
+    "timezone": "GMT-5"
+  },
+  {
+    "id": "user_06",
+    "name": "Fiona",
+    "teaches": ["Cooking"],
+    "learns": ["Guitar"],
+    "rating": 4.3,
+    "timezone": "GMT-5"
+  },
+  {
+    "id": "user_07",
+    "name": "Grace",
+    "teaches": ["Python", "Data Science"],
+    "learns": ["ML"],
+    "rating": 4.6,
+    "timezone": "GMT+2"
+  },
+  {
+    "id": "user_08",
+    "name": "Henry",
+    "teaches": ["Machine Learning"],
+    "learns": ["Programming with Python"],
+    "rating": 4.4,
+    "timezone": "GMT+2"
+  },
+  {
+    "id": "user_09",
+    "name": "Ivy",
+    "teaches": ["Frontend Development"],
+    "learns": ["React.js"],
+    "rating": 4.1,
+    "timezone": "GMT+5"
+  },
+  {
+    "id": "user_10",
+    "name": "Jack",
+    "teaches": ["React.js", "Redux"],
+    "learns": ["Frontend Engineering"],
+    "rating": 4.0,
+    "timezone": "GMT+5"
+  },
+  {
+    "id": "user_11",
+    "name": "Karen",
+    "teaches": ["SQL", "Databases"],
+    "learns": ["Data Engineering"],
+    "rating": 4.5,
+    "timezone": "GMT-1"
+  },
+  {
+    "id": "user_12",
+    "name": "Leo",
+    "teaches": ["AWS", "DevOps", "Containerization"],
+    "learns": ["Kubernetes"],
+    "rating": 4.7,
+    "timezone": "GMT-1"
+  },
+  {
+    "id": "user_13",
+    "name": "Maya",
+    "teaches": ["K8s"],
+    "learns": ["Containers"],
+    "rating": 4.8,
+    "timezone": "GMT-1"
+  },
+  {
+    "id": "user_14",
+    "name": "Noah",
+    "teaches": ["Cybersecurity", "Penetration Testing"],
+    "learns": ["Network Engineering"],
+    "rating": 4.6,
+    "timezone": "GMT+3"
+  },
+  {
+    "id": "user_15",
+    "name": "Olivia",
+    "teaches": ["Mobile Development", "Flutter"],
+    "learns": ["UI Design"],
+    "rating": 4.2,
+    "timezone": "GMT+3"
+  },
+  {
+    "id": "user_16",
+    "name": "Paul",
+    "teaches": ["iOS Swift"],
+    "learns": ["Mobile Apps"],
+    "rating": 4.3,
+    "timezone": "GMT+3"
+  },
+  {
+    "id": "user_17",
+    "name": "Quinn",
+    "teaches": ["Graphic Design", "Photoshop"],
+    "learns": ["Sketching"],
+    "rating": 4.4,
+    "timezone": "GMT-8"
+  },
+  {
+    "id": "user_18",
+    "name": "Ruby",
+    "teaches": ["Illustration"],
+    "learns": ["Visual Design"],
+    "rating": 4.5,
+    "timezone": "GMT-8"
+  },
+  {
+    "id": "user_19",
+    "name": "Sam",
+    "teaches": ["Public Speaking"],
+    "learns": ["Project Management"],
+    "rating": 4.0,
+    "timezone": "GMT+0"
+  },
+  {
+    "id": "user_20",
+    "name": "Tina",
+    "teaches": ["Project Management"],
+    "learns": ["Public Speaking"],
+    "rating": 4.1,
+    "timezone": "GMT+0"
+  }
+]
