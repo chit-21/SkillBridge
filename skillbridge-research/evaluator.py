@@ -1,11 +1,9 @@
-
 from __future__ import annotations
 
 import json
 import argparse
 from pathlib import Path
 from typing import List, Tuple, Dict, Set
-
 
 from bipartite_matcher import get_bipartite_matches
 
@@ -57,41 +55,68 @@ def precision_at_k(recommended_pairs: List[Tuple[str, str]], good_pairs: Set[Tup
     return float(hits) / float(k)
 
 
+def recall(recommended_pairs: List[Tuple[str, str]], good_pairs: Set[Tuple[str, str]]) -> float:
+    if not good_pairs:
+        return 0.0
+    hits = sum(1 for p in recommended_pairs if p in good_pairs)
+    return hits / len(good_pairs)
+
+
+def f1_score(precision: float, recall: float) -> float:
+    if precision + recall == 0:
+        return 0.0
+    return 2 * (precision * recall) / (precision + recall)
+
+
+def mean_reciprocal_rank(recommended_pairs: List[Tuple[str, str]], good_pairs: Set[Tuple[str, str]]) -> float:
+    for idx, pair in enumerate(recommended_pairs, start=1):
+        if pair in good_pairs:
+            return 1.0 / idx
+    return 0.0
+
+
+def hit_rate_at_k(recommended_pairs: List[Tuple[str, str]], good_pairs: Set[Tuple[str, str]], k: int = 5) -> float:
+    topk = recommended_pairs[:k]
+    return 1.0 if any(p in good_pairs for p in topk) else 0.0
+
+
 def evaluate_algorithm(name: str, rec_pairs: List[Tuple[str, str]], good_pairs: Set[Tuple[str, str]], k: int = 5) -> None:
     print(f"--- {name} Results ---")
     print(f"Recommended Pairs ({len(rec_pairs)}): {rec_pairs}")
     p_at_k = precision_at_k(rec_pairs, good_pairs, k=k)
+    r = recall(rec_pairs, good_pairs)
+    f1 = f1_score(p_at_k, r)
+    mrr = mean_reciprocal_rank(rec_pairs, good_pairs)
+    hit_rate = hit_rate_at_k(rec_pairs, good_pairs, k=k)
     print(f"Precision@{k}: {p_at_k:.2f}")
+    print(f"Recall: {r:.2f}")
+    print(f"F1-Score: {f1:.2f}")
+    print(f"MRR: {mrr:.2f}")
+    print(f"Hit Rate@{k}: {hit_rate:.2f}")
     print()
 
 
 def main():
     parser = argparse.ArgumentParser(description="Evaluate matching algorithms against ground truth")
-    parser.add_argument("--k", type=int, default=100, help="Precision@k (default 100)")
+    parser.add_argument("--k", type=int, default=20, help="Precision@k / Hit Rate@k")
     parser.add_argument("--min-score", type=int, default=2, help="Ground-truth score threshold for 'good' (default 2)")
     parser.add_argument("--vec-threshold", type=float, default=0.55, help="Vector matcher min skill similarity (default 0.55)")
     args = parser.parse_args()
 
-
     users = _load_json(USERS_PATH)
     ground_truth = _load_ground_truth()
 
-  
     good_pairs = _good_pairs_set(ground_truth, min_score=args.min_score)
 
-    
     bipartite_results = get_bipartite_matches(users)
     evaluate_algorithm("Bipartite Graph Matcher", bipartite_results, good_pairs, k=args.k)
 
-    
     if _VECTOR_AVAILABLE:
         vector_results = get_vector_matches(users, min_skill_similarity=args.vec_threshold)
         evaluate_algorithm("Vector Embedding Matcher", vector_results, good_pairs, k=args.k)
     else:
         print("Vector Embedding Matcher skipped due to missing dependencies.")
         print("Install with: pip install sentence-transformers scikit-learn numpy networkx\n")
-    
-    
 
 
 if __name__ == "__main__":
