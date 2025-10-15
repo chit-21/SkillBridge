@@ -25,11 +25,10 @@ _Without this, later phases will either break or require expensive rewrites._
             - matching
             - basic chat/video
             - reviews
-        - List _future features_ but do **not implement yet**:
-            - gamification badges
-            - AI recommendations
-            - mobile app
-            - real-time translation
+            saving the transcript of conversation for weighted score of relevance 
+            of conversation wrt skill chosen and some som weighted ratio of feedback given by the learner 
+            which greatly determines the credits to be transferred  
+        
     - **Outcome:** Prevents scope creep during MVP.
 
 - **System Architecture Design**

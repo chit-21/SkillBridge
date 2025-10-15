@@ -1,5 +1,5 @@
-import { initializeApp, getApps } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
+import { initializeApp, getApps, getApp, FirebaseApp } from 'firebase/app';
+import { getAuth, Auth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 
@@ -13,10 +13,18 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-let app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
-export const auth = getAuth(app);
+const app: FirebaseApp =
+  getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
+
+let authInstance: Auth;
+
+// This check is needed to prevent a "Firebase App is not initialized" error during server-side rendering.
+if (typeof window !== 'undefined') {
+  authInstance = getAuth(app);
+}
+
+export const auth = authInstance!;
 export const db = getFirestore(app);
 export const storage = getStorage(app);
 
-export default app; 
-
+export default app;
