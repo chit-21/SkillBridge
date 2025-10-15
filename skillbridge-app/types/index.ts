@@ -4,7 +4,7 @@ export interface Skill {
   skillId: string;
   name: string;
   proficiency: 1 | 2 | 3 | 4 | 5;
-  vector?: number[]; // Optional for now
+  vector?: number[]; 
 }
 
 export interface UserProfile {
@@ -12,7 +12,7 @@ export interface UserProfile {
   displayName: string | null;
   avatarUrl: string | null;
   timezone: string;
-  availability: Record<string, string[]>; // e.g. { "monday": ["09:00-12:00"] }
+  availability: Record<string, string[]>; 
   skillPoints: number;
   avgRating: number;
   ratingsCount: number;
@@ -31,7 +31,7 @@ export interface Match {
 }
 
 export interface Session {
-  participants: [string, string]; // [learnerId, teacherId]
+  participants: [string, string]; 
   skillName: string;
   scheduledAt: Timestamp;
   status: 'scheduled' | 'completed' | 'cancelled';

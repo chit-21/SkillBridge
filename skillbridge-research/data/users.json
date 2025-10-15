@@ -2,1496 +2,800 @@
   {
     "id": "user_001",
     "name": "User_001",
-    "teaches": [
-      "TensorFlow",
-      "NLP"
-    ],
-    "learns": [
-      "React Native",
-      "Firebase",
-      "Android Development"
-    ],
+    "teaches": [ "TensorFlow", "Natural Language Processing" ],
+    "learns": [ "Cross-Platform Apps", "Mobile BaaS", "Android App Creation" ],
     "rating": 4.0,
     "timezone": "GMT-1"
   },
   {
     "id": "user_002",
     "name": "User_002",
-    "teaches": [
-      "SQL",
-      "MongoDB",
-      "Database Optimization"
-    ],
-    "learns": [
-      "Deep Learning",
-      "Data Science",
-      "Data Engineering"
-    ],
+    "teaches": [ "SQL", "MongoDB", "Database Optimization" ],
+    "learns": [ "Deep Learning", "Advanced Data Analysis", "ETL Pipelines" ],
     "rating": 5.0,
     "timezone": "GMT+9"
   },
   {
     "id": "user_003",
     "name": "User_003",
-    "teaches": [
-      "Mobile UI",
-      "React Native",
-      "iOS Development"
-    ],
-    "learns": [
-      "PyTorch",
-      "Python"
-    ],
+    "teaches": [ "Mobile UI", "React Native", "iOS Development" ],
+    "learns": [ "Deep Learning Libraries", "Python Scripting" ],
     "rating": 4.6,
     "timezone": "GMT+3"
   },
   {
     "id": "user_004",
     "name": "User_004",
-    "teaches": [
-      "Database Design",
-      "NoSQL",
-      "Database Optimization"
-    ],
-    "learns": [
-      "PostgreSQL",
-      "Data Warehousing"
-    ],
+    "teaches": [ "Database Design", "NoSQL", "Database Performance" ],
+    "learns": [ "Advanced SQL Databases", "Big Data Storage" ],
     "rating": 4.2,
     "timezone": "GMT+0"
   },
   {
     "id": "user_005",
     "name": "User_005",
-    "teaches": [
-      "SQL",
-      "NoSQL"
-    ],
-    "learns": [
-      "Database Optimization",
-      "Database Design"
-    ],
+    "teaches": [ "SQL", "NoSQL" ],
+    "learns": [ "SQL Performance Tuning", "Data Modeling" ],
     "rating": 4.3,
     "timezone": "GMT+8"
   },
   {
     "id": "user_006",
     "name": "User_006",
-    "teaches": [
-      "Django",
-      "REST APIs"
-    ],
-    "learns": [
-      "Database Optimization",
-      "Database Design",
-      "MongoDB"
-    ],
+    "teaches": [ "Django", "REST APIs" ],
+    "learns": [ "Database Optimization", "Database Schemas", "MongoDB" ],
     "rating": 4.5,
     "timezone": "GMT+8"
   },
   {
     "id": "user_007",
     "name": "User_007",
-    "teaches": [
-      "Vue.js",
-      "Next.js"
-    ],
-    "learns": [
-      "Mobile UI",
-      "Swift",
-      "Flutter"
-    ],
+    "teaches": [ "Vue.js", "Next.js" ],
+    "learns": [ "Mobile User Interface", "iOS Programming", "Cross-Platform SDKs" ],
     "rating": 4.8,
     "timezone": "GMT-5"
   },
   {
     "id": "user_008",
     "name": "User_008",
-    "teaches": [
-      "Terraform",
-      "AWS",
-      "Cloud Automation"
-    ],
-    "learns": [
-      "Python",
-      "TensorFlow",
-      "Data Science"
-    ],
+    "teaches": [ "Terraform", "AWS", "Cloud Automation" ],
+    "learns": [ "Python", "Machine Learning Frameworks", "Data Science" ],
     "rating": 4.7,
     "timezone": "GMT+8"
   },
   {
     "id": "user_009",
     "name": "User_009",
-    "teaches": [
-      "UI/UX Design",
-      "TypeScript"
-    ],
-    "learns": [
-      "CI/CD",
-      "AWS"
-    ],
+    "teaches": [ "UI/UX Design", "TypeScript" ],
+    "learns": [ "Deployment Pipelines", "Cloud Services" ],
     "rating": 4.9,
     "timezone": "GMT+1"
   },
   {
     "id": "user_010",
     "name": "User_010",
-    "teaches": [
-      "Database Design",
-      "Data Warehousing",
-      "MongoDB"
-    ],
-    "learns": [
-      "Computer Vision",
-      "PyTorch"
-    ],
+    "teaches": [ "Database Design", "Data Warehousing", "MongoDB" ],
+    "learns": [ "Computer Vision", "PyTorch" ],
     "rating": 4.1,
     "timezone": "GMT+7"
   },
   {
     "id": "user_011",
     "name": "User_011",
-    "teaches": [
-      "GraphQL",
-      "Microservices"
-    ],
-    "learns": [
-      "PyTorch",
-      "NLP",
-      "Data Engineering"
-    ],
+    "teaches": [ "GraphQL", "Microservices" ],
+    "learns": [ "PyTorch", "NLP", "Data Engineering" ],
     "rating": 4.3,
     "timezone": "GMT+1"
   },
   {
     "id": "user_012",
     "name": "User_012",
-    "teaches": [
-      "TypeScript",
-      "Vue.js"
-    ],
-    "learns": [
-      "NLP",
-      "TensorFlow"
-    ],
+    "teaches": [ "TypeScript", "Vue.js" ],
+    "learns": [ "NLP", "TensorFlow" ],
     "rating": 4.0,
     "timezone": "GMT+9"
   },
   {
     "id": "user_013",
     "name": "User_013",
-    "teaches": [
-      "Python",
-      "Computer Vision",
-      "PyTorch"
-    ],
-    "learns": [
-      "Vue.js",
-      "Angular"
-    ],
+    "teaches": [ "Python", "Computer Vision", "PyTorch" ],
+    "learns": [ "Modern JS Frameworks", "Frontend Technologies" ],
     "rating": 4.9,
     "timezone": "GMT+7"
   },
   {
     "id": "user_014",
     "name": "User_014",
-    "teaches": [
-      "Next.js",
-      "TypeScript",
-      "CSS"
-    ],
-    "learns": [
-      "REST APIs",
-      "Backend Development"
-    ],
+    "teaches": [ "Next.js", "TypeScript", "CSS" ],
+    "learns": [ "Web API Development", "Server-Side Logic" ],
     "rating": 4.5,
     "timezone": "GMT+9"
   },
   {
     "id": "user_015",
     "name": "User_015",
-    "teaches": [
-      "Express",
-      "GraphQL",
-      "Node.js"
-    ],
-    "learns": [
-      "TypeScript",
-      "UI/UX Design"
-    ],
+    "teaches": [ "Express", "GraphQL", "Node.js" ],
+    "learns": [ "TypeScript", "User Experience Principles" ],
     "rating": 4.1,
     "timezone": "GMT+7"
   },
   {
     "id": "user_016",
     "name": "User_016",
-    "teaches": [
-      "Express",
-      "Django",
-      "Microservices"
-    ],
-    "learns": [
-      "MongoDB",
-      "Database Design",
-      "PostgreSQL"
-    ],
+    "teaches": [ "Express", "Django", "Microservices" ],
+    "learns": [ "MongoDB", "Database Design", "PostgreSQL" ],
     "rating": 4.7,
     "timezone": "GMT+4"
   },
   {
     "id": "user_017",
     "name": "User_017",
-    "teaches": [
-      "UI/UX Design",
-      "Frontend Development",
-      "Next.js"
-    ],
-    "learns": [
-      "React",
-      "CSS"
-    ],
+    "teaches": [ "UI/UX Design", "Frontend Development", "Next.js" ],
+    "learns": [ "React", "Web Styling" ],
     "rating": 4.0,
     "timezone": "GMT+9"
   },
   {
     "id": "user_018",
     "name": "User_018",
-    "teaches": [
-      "JavaScript",
-      "Frontend Development",
-      "UI/UX Design"
-    ],
-    "learns": [
-      "Data Engineering",
-      "Python"
-    ],
+    "teaches": [ "JavaScript", "Frontend Development", "UI/UX Design" ],
+    "learns": [ "Data Engineering", "Python" ],
     "rating": 4.6,
     "timezone": "GMT+7"
   },
   {
     "id": "user_019",
     "name": "User_019",
-    "teaches": [
-      "Firebase",
-      "Flutter",
-      "Mobile UI"
-    ],
-    "learns": [
-      "Android Development",
-      "iOS Development",
-      "Firebase"
-    ],
+    "teaches": [ "Firebase", "Flutter", "Mobile UI" ],
+    "learns": [ "Android Development", "iOS Development", "Firebase" ],
     "rating": 4.8,
     "timezone": "GMT+7"
   },
   {
     "id": "user_020",
     "name": "User_020",
-    "teaches": [
-      "GraphQL",
-      "Microservices"
-    ],
-    "learns": [
-      "Express",
-      "Microservices"
-    ],
+    "teaches": [ "GraphQL", "Microservice Architecture" ],
+    "learns": [ "Node.js Frameworks", "Distributed Systems" ],
     "rating": 4.4,
     "timezone": "GMT+4"
   },
   {
     "id": "user_021",
     "name": "User_021",
-    "teaches": [
-      "iOS Development",
-      "Firebase"
-    ],
-    "learns": [
-      "Backend Development",
-      "Express",
-      "System Design"
-    ],
+    "teaches": [ "iOS Development", "Firebase" ],
+    "learns": [ "Backend Development", "Express", "System Design" ],
     "rating": 4.8,
     "timezone": "GMT-5"
   },
   {
     "id": "user_022",
     "name": "User_022",
-    "teaches": [
-      "Mobile UI",
-      "iOS Development",
-      "Kotlin"
-    ],
-    "learns": [
-      "AWS",
-      "Cloud Automation"
-    ],
+    "teaches": [ "Mobile UI", "iOS Development", "Kotlin" ],
+    "learns": [ "AWS", "Cloud Scripting" ],
     "rating": 4.3,
     "timezone": "GMT-1"
   },
   {
     "id": "user_023",
     "name": "User_023",
-    "teaches": [
-      "Flutter",
-      "React Native"
-    ],
-    "learns": [
-      "Flutter",
-      "Firebase",
-      "Mobile UI"
-    ],
+    "teaches": [ "Flutter", "React Native" ],
+    "learns": [ "Flutter", "Firebase", "Mobile UI" ],
     "rating": 4.2,
     "timezone": "GMT+2"
   },
   {
     "id": "user_024",
     "name": "User_024",
-    "teaches": [
-      "PostgreSQL",
-      "SQL",
-      "Data Warehousing"
-    ],
-    "learns": [
-      "UI/UX Design",
-      "Vue.js"
-    ],
+    "teaches": [ "PostgreSQL", "SQL", "Data Warehousing" ],
+    "learns": [ "UI/UX Design", "Vue.js" ],
     "rating": 4.6,
     "timezone": "GMT-3"
   },
   {
     "id": "user_025",
     "name": "User_025",
-    "teaches": [
-      "Data Engineering",
-      "Machine Learning"
-    ],
-    "learns": [
-      "Data Science",
-      "TensorFlow",
-      "Data Engineering"
-    ],
+    "teaches": [ "Data Engineering", "Machine Learning" ],
+    "learns": [ "Data Science", "TensorFlow", "Data Engineering" ],
     "rating": 4.2,
     "timezone": "GMT+6"
   },
   {
     "id": "user_026",
     "name": "User_026",
-    "teaches": [
-      "Vue.js",
-      "Angular",
-      "TypeScript"
-    ],
-    "learns": [
-      "TypeScript",
-      "JavaScript"
-    ],
+    "teaches": [ "Vue.js", "Angular", "TypeScript" ],
+    "learns": [ "TypeScript", "JavaScript" ],
     "rating": 4.1,
     "timezone": "GMT+2"
   },
   {
     "id": "user_027",
     "name": "User_027",
-    "teaches": [
-      "Data Warehousing",
-      "Database Design",
-      "NoSQL"
-    ],
-    "learns": [
-      "Firebase",
-      "Swift",
-      "Kotlin"
-    ],
+    "teaches": [ "Data Warehousing", "Database Design", "NoSQL" ],
+    "learns": [ "Firebase", "Swift", "Kotlin" ],
     "rating": 4.3,
     "timezone": "GMT+5"
   },
   {
     "id": "user_028",
     "name": "User_028",
-    "teaches": [
-      "Data Warehousing",
-      "PostgreSQL",
-      "NoSQL"
-    ],
-    "learns": [
-      "Angular",
-      "TypeScript",
-      "JavaScript"
-    ],
+    "teaches": [ "Data Warehousing", "PostgreSQL", "NoSQL" ],
+    "learns": [ "Angular", "TypeScript", "JavaScript" ],
     "rating": 4.2,
     "timezone": "GMT+8"
   },
   {
     "id": "user_029",
     "name": "User_029",
-    "teaches": [
-      "GraphQL",
-      "Node.js",
-      "REST APIs"
-    ],
-    "learns": [
-      "Python",
-      "NLP"
-    ],
+    "teaches": [ "GraphQL", "Node.js", "REST APIs" ],
+    "learns": [ "Python", "NLP" ],
     "rating": 4.5,
     "timezone": "GMT+2"
   },
   {
     "id": "user_030",
     "name": "User_030",
-    "teaches": [
-      "UI/UX Design",
-      "Next.js",
-      "Frontend Development"
-    ],
-    "learns": [
-      "Data Science",
-      "Data Engineering"
-    ],
+    "teaches": [ "UI/UX Design", "Next.js", "Frontend Development" ],
+    "learns": [ "Data Science", "Data Engineering" ],
     "rating": 4.1,
     "timezone": "GMT+10"
   },
   {
     "id": "user_031",
     "name": "User_031",
-    "teaches": [
-      "Firebase",
-      "Kotlin"
-    ],
-    "learns": [
-      "Django",
-      "REST APIs"
-    ],
+    "teaches": [ "Firebase", "Kotlin" ],
+    "learns": [ "Python Web Frameworks", "REST APIs" ],
     "rating": 5.0,
     "timezone": "GMT+5"
   },
   {
     "id": "user_032",
     "name": "User_032",
-    "teaches": [
-      "Flutter",
-      "Mobile UI"
-    ],
-    "learns": [
-      "Frontend Development",
-      "CSS",
-      "Vue.js"
-    ],
+    "teaches": [ "Flutter", "Mobile UI" ],
+    "learns": [ "Frontend Development", "CSS", "Vue.js" ],
     "rating": 4.5,
     "timezone": "GMT+10"
   },
   {
     "id": "user_033",
     "name": "User_033",
-    "teaches": [
-      "Data Science",
-      "Data Engineering",
-      "Machine Learning"
-    ],
-    "learns": [
-      "Kubernetes",
-      "CI/CD",
-      "AWS"
-    ],
+    "teaches": [ "Data Science", "Data Engineering", "Machine Learning" ],
+    "learns": [ "Container Orchestration", "CI/CD", "AWS" ],
     "rating": 4.3,
     "timezone": "GMT+7"
   },
   {
     "id": "user_034",
     "name": "User_034",
-    "teaches": [
-      "UI/UX Design",
-      "HTML",
-      "Vue.js"
-    ],
-    "learns": [
-      "Frontend Development",
-      "TypeScript",
-      "HTML"
-    ],
+    "teaches": [ "UI/UX Design", "HTML", "Vue.js" ],
+    "learns": [ "Frontend Development", "TypeScript", "HTML" ],
     "rating": 4.0,
     "timezone": "GMT+9"
   },
   {
     "id": "user_035",
     "name": "User_035",
-    "teaches": [
-      "iOS Development",
-      "Flutter"
-    ],
-    "learns": [
-      "Swift",
-      "Flutter"
-    ],
+    "teaches": [ "iOS Development", "Flutter" ],
+    "learns": [ "Swift", "Flutter" ],
     "rating": 4.6,
     "timezone": "GMT+6"
   },
   {
     "id": "user_036",
     "name": "User_036",
-    "teaches": [
-      "Mobile UI",
-      "Swift",
-      "React Native"
-    ],
-    "learns": [
-      "DevOps",
-      "Azure"
-    ],
+    "teaches": [ "Mobile UI", "Swift", "React Native" ],
+    "learns": [ "DevOps", "Microsoft Cloud Platform" ],
     "rating": 4.8,
     "timezone": "GMT+7"
   },
   {
     "id": "user_037",
     "name": "User_037",
-    "teaches": [
-      "Azure",
-      "Docker",
-      "CI/CD"
-    ],
-    "learns": [
-      "Django",
-      "Node.js"
-    ],
+    "teaches": [ "Azure", "Docker", "CI/CD" ],
+    "learns": [ "Django", "Node.js" ],
     "rating": 4.7,
     "timezone": "GMT+1"
   },
   {
     "id": "user_038",
     "name": "User_038",
-    "teaches": [
-      "MongoDB",
-      "Database Optimization"
-    ],
-    "learns": [
-      "Data Engineering",
-      "Deep Learning",
-      "Python"
-    ],
+    "teaches": [ "MongoDB", "Database Optimization" ],
+    "learns": [ "Data Engineering", "Deep Learning", "Python" ],
     "rating": 4.3,
     "timezone": "GMT-3"
   },
   {
     "id": "user_039",
     "name": "User_039",
-    "teaches": [
-      "Swift",
-      "iOS Development",
-      "Firebase"
-    ],
-    "learns": [
-      "Kubernetes",
-      "Infrastructure as Code"
-    ],
+    "teaches": [ "Swift", "iOS Development", "Firebase" ],
+    "learns": [ "Kubernetes", "Infrastructure as Code" ],
     "rating": 4.2,
     "timezone": "GMT+3"
   },
   {
     "id": "user_040",
     "name": "User_040",
-    "teaches": [
-      "Database Optimization",
-      "PostgreSQL"
-    ],
-    "learns": [
-      "Swift",
-      "Firebase"
-    ],
+    "teaches": [ "Database Optimization", "PostgreSQL" ],
+    "learns": [ "Swift", "Firebase" ],
     "rating": 4.2,
     "timezone": "GMT+10"
   },
   {
     "id": "user_041",
     "name": "User_041",
-    "teaches": [
-      "Angular",
-      "JavaScript"
-    ],
-    "learns": [
-      "Docker",
-      "Kubernetes",
-      "AWS"
-    ],
+    "teaches": [ "Angular", "JavaScript" ],
+    "learns": [ "Containerization", "Kubernetes", "AWS" ],
     "rating": 4.7,
     "timezone": "GMT-5"
   },
   {
     "id": "user_042",
     "name": "User_042",
-    "teaches": [
-      "Machine Learning",
-      "NLP",
-      "Data Engineering"
-    ],
-    "learns": [
-      "Database Optimization",
-      "Data Warehousing"
-    ],
+    "teaches": [ "Machine Learning", "NLP", "Data Engineering" ],
+    "learns": [ "Database Optimization", "Data Warehousing" ],
     "rating": 4.1,
     "timezone": "GMT-3"
   },
   {
     "id": "user_043",
     "name": "User_043",
-    "teaches": [
-      "Express",
-      "GraphQL"
-    ],
-    "learns": [
-      "PostgreSQL",
-      "MongoDB"
-    ],
+    "teaches": [ "Express", "GraphQL" ],
+    "learns": [ "PostgreSQL", "MongoDB" ],
     "rating": 4.2,
     "timezone": "GMT-3"
   },
   {
     "id": "user_044",
     "name": "User_044",
-    "teaches": [
-      "PostgreSQL",
-      "Data Warehousing",
-      "MongoDB"
-    ],
-    "learns": [
-      "Data Warehousing",
-      "Database Optimization",
-      "SQL"
-    ],
+    "teaches": [ "PostgreSQL", "Data Warehousing", "MongoDB" ],
+    "learns": [ "Data Warehousing", "Database Optimization", "SQL" ],
     "rating": 4.7,
     "timezone": "GMT+10"
   },
   {
     "id": "user_045",
     "name": "User_045",
-    "teaches": [
-      "Database Design",
-      "SQL"
-    ],
-    "learns": [
-      "Frontend Development",
-      "JavaScript"
-    ],
+    "teaches": [ "Database Design", "SQL" ],
+    "learns": [ "Frontend Development", "JavaScript" ],
     "rating": 4.2,
     "timezone": "GMT+6"
   },
   {
     "id": "user_046",
     "name": "User_046",
-    "teaches": [
-      "Data Science",
-      "PyTorch",
-      "Machine Learning"
-    ],
-    "learns": [
-      "Microservices",
-      "REST APIs"
-    ],
+    "teaches": [ "Data Science", "PyTorch", "Machine Learning" ],
+    "learns": [ "Service-Oriented Architecture", "REST APIs" ],
     "rating": 4.1,
     "timezone": "GMT-1"
   },
   {
     "id": "user_047",
     "name": "User_047",
-    "teaches": [
-      "Node.js",
-      "Django"
-    ],
-    "learns": [
-      "GraphQL",
-      "REST APIs"
-    ],
+    "teaches": [ "Node.js", "Django" ],
+    "learns": [ "GraphQL", "REST APIs" ],
     "rating": 4.4,
     "timezone": "GMT+5"
   },
   {
     "id": "user_048",
     "name": "User_048",
-    "teaches": [
-      "Django",
-      "Backend Development",
-      "Express"
-    ],
-    "learns": [
-      "MongoDB",
-      "NoSQL",
-      "Database Optimization"
-    ],
+    "teaches": [ "Django", "Backend Development", "Express" ],
+    "learns": [ "MongoDB", "NoSQL", "Database Optimization" ],
     "rating": 4.9,
     "timezone": "GMT+8"
   },
   {
     "id": "user_049",
     "name": "User_049",
-    "teaches": [
-      "PostgreSQL",
-      "MongoDB",
-      "Database Optimization"
-    ],
-    "learns": [
-      "Angular",
-      "JavaScript"
-    ],
+    "teaches": [ "PostgreSQL", "MongoDB", "Database Optimization" ],
+    "learns": [ "Angular", "JavaScript" ],
     "rating": 4.5,
     "timezone": "GMT+6"
   },
   {
     "id": "user_050",
     "name": "User_050",
-    "teaches": [
-      "Kubernetes",
-      "AWS"
-    ],
-    "learns": [
-      "GraphQL",
-      "Microservices",
-      "Node.js"
-    ],
+    "teaches": [ "Kubernetes", "AWS" ],
+    "learns": [ "GraphQL", "Microservices", "Node.js" ],
     "rating": 4.8,
     "timezone": "GMT+8"
   },
   {
     "id": "user_051",
     "name": "User_051",
-    "teaches": [
-      "Next.js",
-      "CSS",
-      "Angular"
-    ],
-    "learns": [
-      "Infrastructure as Code",
-      "CI/CD"
-    ],
+    "teaches": [ "Next.js", "CSS", "Angular" ],
+    "learns": [ "Infrastructure as Code", "CI/CD" ],
     "rating": 4.3,
     "timezone": "GMT+7"
   },
   {
     "id": "user_052",
     "name": "User_052",
-    "teaches": [
-      "TypeScript",
-      "CSS",
-      "UI/UX Design"
-    ],
-    "learns": [
-      "PostgreSQL",
-      "SQL"
-    ],
+    "teaches": [ "TypeScript", "CSS", "UI/UX Design" ],
+    "learns": [ "PostgreSQL", "SQL" ],
     "rating": 4.6,
     "timezone": "GMT+10"
   },
   {
     "id": "user_053",
     "name": "User_053",
-    "teaches": [
-      "Frontend Development",
-      "CSS"
-    ],
-    "learns": [
-      "iOS Development",
-      "Mobile UI",
-      "Kotlin"
-    ],
+    "teaches": [ "Frontend Development", "CSS" ],
+    "learns": [ "iOS Development", "Mobile UI", "Kotlin" ],
     "rating": 4.3,
     "timezone": "GMT-3"
   },
   {
     "id": "user_054",
     "name": "User_054",
-    "teaches": [
-      "JavaScript",
-      "UI/UX Design"
-    ],
-    "learns": [
-      "PostgreSQL",
-      "SQL",
-      "Database Design"
-    ],
+    "teaches": [ "JavaScript", "UI/UX Design" ],
+    "learns": [ "PostgreSQL", "SQL", "Database Design" ],
     "rating": 4.1,
     "timezone": "GMT-1"
   },
   {
     "id": "user_055",
     "name": "User_055",
-    "teaches": [
-      "TensorFlow",
-      "Data Engineering",
-      "Deep Learning"
-    ],
-    "learns": [
-      "iOS Development",
-      "Flutter",
-      "Mobile UI"
-    ],
+    "teaches": [ "TensorFlow", "Data Engineering", "Deep Learning" ],
+    "learns": [ "iOS Development", "Flutter", "Mobile UI" ],
     "rating": 4.6,
     "timezone": "GMT+1"
   },
   {
     "id": "user_056",
     "name": "User_056",
-    "teaches": [
-      "Swift",
-      "Flutter",
-      "Kotlin"
-    ],
-    "learns": [
-      "Deep Learning",
-      "NLP"
-    ],
+    "teaches": [ "Swift", "Flutter", "Kotlin" ],
+    "learns": [ "Deep Learning", "NLP" ],
     "rating": 4.8,
     "timezone": "GMT+0"
   },
   {
     "id": "user_057",
     "name": "User_057",
-    "teaches": [
-      "iOS Development",
-      "Kotlin",
-      "Flutter"
-    ],
-    "learns": [
-      "Cloud Infrastructure",
-      "Cloud Automation"
-    ],
+    "teaches": [ "iOS Development", "Kotlin", "Flutter" ],
+    "learns": [ "Cloud Infrastructure", "Cloud Automation" ],
     "rating": 4.5,
     "timezone": "GMT+9"
   },
   {
     "id": "user_058",
     "name": "User_058",
-    "teaches": [
-      "Firebase",
-      "Android Development"
-    ],
-    "learns": [
-      "GraphQL",
-      "Backend Development"
-    ],
+    "teaches": [ "Firebase", "Android Development" ],
+    "learns": [ "GraphQL", "Backend Development" ],
     "rating": 4.5,
     "timezone": "GMT-3"
   },
   {
     "id": "user_059",
     "name": "User_059",
-    "teaches": [
-      "HTML",
-      "TypeScript"
-    ],
-    "learns": [
-      "Mobile UI",
-      "Firebase",
-      "Kotlin"
-    ],
+    "teaches": [ "HTML", "TypeScript" ],
+    "learns": [ "Mobile UI", "Firebase", "Kotlin" ],
     "rating": 4.9,
     "timezone": "GMT+1"
   },
   {
     "id": "user_060",
     "name": "User_060",
-    "teaches": [
-      "TensorFlow",
-      "NLP",
-      "PyTorch"
-    ],
-    "learns": [
-      "Frontend Development",
-      "Angular"
-    ],
+    "teaches": [ "TensorFlow", "NLP", "PyTorch" ],
+    "learns": [ "Frontend Development", "Angular" ],
     "rating": 4.1,
     "timezone": "GMT+9"
   },
   {
     "id": "user_061",
     "name": "User_061",
-    "teaches": [
-      "React Native",
-      "Swift",
-      "Flutter"
-    ],
-    "learns": [
-      "Backend Development",
-      "Microservices",
-      "Flask"
-    ],
+    "teaches": [ "React Native", "Swift", "Flutter" ],
+    "learns": [ "Backend Development", "Microservices", "Flask" ],
     "rating": 4.5,
     "timezone": "GMT+3"
   },
   {
     "id": "user_062",
     "name": "User_062",
-    "teaches": [
-      "Cloud Infrastructure",
-      "Terraform",
-      "Azure"
-    ],
-    "learns": [
-      "GraphQL",
-      "Node.js"
-    ],
+    "teaches": [ "Cloud Infrastructure", "Terraform", "Azure" ],
+    "learns": [ "GraphQL", "Node.js" ],
     "rating": 4.2,
     "timezone": "GMT+8"
   },
   {
     "id": "user_063",
     "name": "User_063",
-    "teaches": [
-      "Firebase",
-      "Android Development"
-    ],
-    "learns": [
-      "Kotlin",
-      "Flutter",
-      "Firebase"
-    ],
+    "teaches": [ "Firebase", "Android Development" ],
+    "learns": [ "Kotlin", "Flutter", "Firebase" ],
     "rating": 4.4,
     "timezone": "GMT+5"
   },
   {
     "id": "user_064",
     "name": "User_064",
-    "teaches": [
-      "Database Design",
-      "Database Optimization"
-    ],
-    "learns": [
-      "CI/CD",
-      "Terraform",
-      "Cloud Automation"
-    ],
+    "teaches": [ "Database Design", "Database Optimization" ],
+    "learns": [ "CI/CD", "Terraform", "Cloud Automation" ],
     "rating": 4.4,
     "timezone": "GMT+1"
   },
   {
     "id": "user_065",
     "name": "User_065",
-    "teaches": [
-      "Backend Development",
-      "GraphQL"
-    ],
-    "learns": [
-      "Cloud Automation",
-      "Infrastructure as Code"
-    ],
+    "teaches": [ "Backend Development", "GraphQL" ],
+    "learns": [ "Cloud Automation", "Infrastructure as Code" ],
     "rating": 4.2,
     "timezone": "GMT+0"
   },
   {
     "id": "user_066",
     "name": "User_066",
-    "teaches": [
-      "Android Development",
-      "Swift"
-    ],
-    "learns": [
-      "GraphQL",
-      "Django",
-      "System Design"
-    ],
+    "teaches": [ "Android Development", "Swift" ],
+    "learns": [ "GraphQL", "Django", "System Design" ],
     "rating": 4.3,
     "timezone": "GMT+3"
   },
   {
     "id": "user_067",
     "name": "User_067",
-    "teaches": [
-      "Cloud Automation",
-      "Terraform"
-    ],
-    "learns": [
-      "DevOps",
-      "Cloud Automation"
-    ],
+    "teaches": [ "Cloud Automation", "Terraform" ],
+    "learns": [ "DevOps", "Cloud Automation" ],
     "rating": 4.4,
     "timezone": "GMT+9"
   },
   {
     "id": "user_068",
     "name": "User_068",
-    "teaches": [
-      "Flask",
-      "REST APIs"
-    ],
-    "learns": [
-      "JavaScript",
-      "React"
-    ],
+    "teaches": [ "Flask", "REST APIs" ],
+    "learns": [ "JavaScript", "React" ],
     "rating": 4.9,
     "timezone": "GMT+2"
   },
   {
     "id": "user_069",
     "name": "User_069",
-    "teaches": [
-      "Node.js",
-      "Backend Development"
-    ],
-    "learns": [
-      "TensorFlow",
-      "Machine Learning"
-    ],
+    "teaches": [ "Node.js", "Backend Development" ],
+    "learns": [ "TensorFlow", "Machine Learning" ],
     "rating": 4.2,
     "timezone": "GMT+2"
   },
   {
     "id": "user_070",
     "name": "User_070",
-    "teaches": [
-      "Kotlin",
-      "Firebase"
-    ],
-    "learns": [
-      "Express",
-      "REST APIs"
-    ],
+    "teaches": [ "Kotlin", "Firebase" ],
+    "learns": [ "Express", "REST APIs" ],
     "rating": 4.2,
     "timezone": "GMT+4"
   },
   {
     "id": "user_071",
     "name": "User_071",
-    "teaches": [
-      "Mobile UI",
-      "Android Development"
-    ],
-    "learns": [
-      "NoSQL",
-      "Database Design"
-    ],
+    "teaches": [ "Mobile UI", "Android Development" ],
+    "learns": [ "NoSQL", "Database Design" ],
     "rating": 4.1,
     "timezone": "GMT+8"
   },
   {
     "id": "user_072",
     "name": "User_072",
-    "teaches": [
-      "SQL",
-      "Database Optimization"
-    ],
-    "learns": [
-      "Firebase",
-      "Android Development",
-      "Swift"
-    ],
+    "teaches": [ "SQL", "Database Optimization" ],
+    "learns": [ "Firebase", "Android Development", "Swift" ],
     "rating": 4.5,
     "timezone": "GMT+10"
   },
   {
     "id": "user_073",
     "name": "User_073",
-    "teaches": [
-      "PostgreSQL",
-      "NoSQL",
-      "Database Optimization"
-    ],
-    "learns": [
-      "PostgreSQL",
-      "SQL"
-    ],
+    "teaches": [ "PostgreSQL", "NoSQL", "Database Optimization" ],
+    "learns": [ "PostgreSQL", "SQL" ],
     "rating": 4.8,
     "timezone": "GMT+6"
   },
   {
     "id": "user_074",
     "name": "User_074",
-    "teaches": [
-      "GraphQL",
-      "REST APIs"
-    ],
-    "learns": [
-      "Python",
-      "Data Engineering",
-      "Machine Learning"
-    ],
+    "teaches": [ "GraphQL", "REST APIs" ],
+    "learns": [ "Python", "Data Engineering", "Machine Learning" ],
     "rating": 4.8,
     "timezone": "GMT+10"
   },
   {
     "id": "user_075",
     "name": "User_075",
-    "teaches": [
-      "System Design",
-      "Express",
-      "Flask"
-    ],
-    "learns": [
-      "SQL",
-      "Data Warehousing"
-    ],
+    "teaches": [ "System Design", "Express", "Flask" ],
+    "learns": [ "SQL", "Data Warehousing" ],
     "rating": 4.0,
     "timezone": "GMT+10"
   },
   {
     "id": "user_076",
     "name": "User_076",
-    "teaches": [
-      "JavaScript",
-      "Angular"
-    ],
-    "learns": [
-      "CI/CD",
-      "Cloud Infrastructure"
-    ],
+    "teaches": [ "JavaScript", "Angular" ],
+    "learns": [ "CI/CD", "Cloud Infrastructure" ],
     "rating": 4.8,
     "timezone": "GMT+1"
   },
   {
     "id": "user_077",
     "name": "User_077",
-    "teaches": [
-      "Next.js",
-      "CSS"
-    ],
-    "learns": [
-      "Data Engineering",
-      "Data Science"
-    ],
+    "teaches": [ "Next.js", "CSS" ],
+    "learns": [ "Data Engineering", "Data Science" ],
     "rating": 4.3,
     "timezone": "GMT+7"
   },
   {
     "id": "user_078",
     "name": "User_078",
-    "teaches": [
-      "Next.js",
-      "UI/UX Design"
-    ],
-    "learns": [
-      "Data Science",
-      "NLP",
-      "Data Engineering"
-    ],
+    "teaches": [ "Next.js", "UI/UX Design" ],
+    "learns": [ "Data Science", "NLP", "Data Engineering" ],
     "rating": 4.8,
     "timezone": "GMT+9"
   },
   {
     "id": "user_079",
     "name": "User_079",
-    "teaches": [
-      "Angular",
-      "UI/UX Design"
-    ],
-    "learns": [
-      "Flutter",
-      "React Native"
-    ],
+    "teaches": [ "Angular", "UI/UX Design" ],
+    "learns": [ "Flutter", "React Native" ],
     "rating": 4.5,
     "timezone": "GMT-3"
   },
   {
     "id": "user_080",
     "name": "User_080",
-    "teaches": [
-      "Terraform",
-      "Kubernetes",
-      "DevOps"
-    ],
-    "learns": [
-      "Azure",
-      "DevOps",
-      "CI/CD"
-    ],
+    "teaches": [ "Terraform", "Kubernetes", "DevOps" ],
+    "learns": [ "Azure", "DevOps", "CI/CD" ],
     "rating": 4.8,
     "timezone": "GMT+9"
   },
   {
     "id": "user_081",
     "name": "User_081",
-    "teaches": [
-      "NoSQL",
-      "SQL",
-      "Database Optimization"
-    ],
-    "learns": [
-      "Kubernetes",
-      "Cloud Automation",
-      "Docker"
-    ],
+    "teaches": [ "NoSQL", "SQL", "Database Optimization" ],
+    "learns": [ "Kubernetes", "Cloud Automation", "Docker" ],
     "rating": 4.0,
     "timezone": "GMT+1"
   },
   {
     "id": "user_082",
     "name": "User_082",
-    "teaches": [
-      "Azure",
-      "Terraform",
-      "CI/CD"
-    ],
-    "learns": [
-      "Backend Development",
-      "Microservices"
-    ],
+    "teaches": [ "Azure", "Terraform", "CI/CD" ],
+    "learns": [ "Backend Development", "Microservices" ],
     "rating": 4.1,
     "timezone": "GMT+6"
   },
   {
     "id": "user_083",
     "name": "User_083",
-    "teaches": [
-      "PostgreSQL",
-      "SQL",
-      "Database Optimization"
-    ],
-    "learns": [
-      "Swift",
-      "React Native"
-    ],
+    "teaches": [ "PostgreSQL", "SQL", "Database Optimization" ],
+    "learns": [ "Swift", "React Native" ],
     "rating": 4.2,
     "timezone": "GMT+3"
   },
   {
     "id": "user_084",
     "name": "User_084",
-    "teaches": [
-      "Database Optimization",
-      "MongoDB",
-      "SQL"
-    ],
-    "learns": [
-      "NLP",
-      "Python",
-      "Machine Learning"
-    ],
+    "teaches": [ "Database Optimization", "MongoDB", "SQL" ],
+    "learns": [ "NLP", "Python", "Machine Learning" ],
     "rating": 4.1,
     "timezone": "GMT+2"
   },
   {
     "id": "user_085",
     "name": "User_085",
-    "teaches": [
-      "iOS Development",
-      "Mobile UI"
-    ],
-    "learns": [
-      "JavaScript",
-      "HTML"
-    ],
+    "teaches": [ "iOS Development", "Mobile UI" ],
+    "learns": [ "JavaScript", "HTML" ],
     "rating": 4.4,
     "timezone": "GMT-3"
   },
   {
     "id": "user_086",
     "name": "User_086",
-    "teaches": [
-      "Flutter",
-      "Kotlin",
-      "React Native"
-    ],
-    "learns": [
-      "Flask",
-      "Backend Development"
-    ],
+    "teaches": [ "Flutter", "Kotlin", "React Native" ],
+    "learns": [ "Flask", "Backend Development" ],
     "rating": 4.5,
     "timezone": "GMT-1"
   },
   {
     "id": "user_087",
     "name": "User_087",
-    "teaches": [
-      "Machine Learning",
-      "PyTorch"
-    ],
-    "learns": [
-      "Kubernetes",
-      "Terraform",
-      "AWS"
-    ],
+    "teaches": [ "Machine Learning", "PyTorch" ],
+    "learns": [ "Kubernetes", "Terraform", "AWS" ],
     "rating": 4.5,
     "timezone": "GMT+6"
   },
   {
     "id": "user_088",
     "name": "User_088",
-    "teaches": [
-      "Android Development",
-      "Flutter",
-      "Kotlin"
-    ],
-    "learns": [
-      "Terraform",
-      "AWS",
-      "Cloud Infrastructure"
-    ],
+    "teaches": [ "Android Development", "Flutter", "Kotlin" ],
+    "learns": [ "Terraform", "AWS", "Cloud Infrastructure" ],
     "rating": 4.0,
     "timezone": "GMT+4"
   },
   {
     "id": "user_089",
     "name": "User_089",
-    "teaches": [
-      "Next.js",
-      "UI/UX Design"
-    ],
-    "learns": [
-      "TensorFlow",
-      "PyTorch"
-    ],
+    "teaches": [ "Next.js", "UI/UX Design" ],
+    "learns": [ "TensorFlow", "PyTorch" ],
     "rating": 4.8,
     "timezone": "GMT+8"
   },
   {
     "id": "user_090",
     "name": "User_090",
-    "teaches": [
-      "Terraform",
-      "Cloud Infrastructure",
-      "Docker"
-    ],
-    "learns": [
-      "REST APIs",
-      "Django"
-    ],
+    "teaches": [ "Terraform", "Cloud Infrastructure", "Docker" ],
+    "learns": [ "REST APIs", "Django" ],
     "rating": 4.0,
     "timezone": "GMT-3"
   },
   {
     "id": "user_091",
     "name": "User_091",
-    "teaches": [
-      "PyTorch",
-      "Machine Learning",
-      "NLP"
-    ],
-    "learns": [
-      "Backend Development",
-      "Django",
-      "Express"
-    ],
+    "teaches": [ "PyTorch", "Machine Learning", "NLP" ],
+    "learns": [ "Backend Development", "Django", "Express" ],
     "rating": 4.0,
     "timezone": "GMT+7"
   },
   {
     "id": "user_092",
     "name": "User_092",
-    "teaches": [
-      "REST APIs",
-      "GraphQL",
-      "Flask"
-    ],
-    "learns": [
-      "Frontend Development",
-      "Vue.js"
-    ],
+    "teaches": [ "REST APIs", "GraphQL", "Flask" ],
+    "learns": [ "Frontend Development", "Vue.js" ],
     "rating": 4.3,
     "timezone": "GMT+7"
   },
   {
     "id": "user_093",
     "name": "User_093",
-    "teaches": [
-      "Flask",
-      "Express"
-    ],
-    "learns": [
-      "Kubernetes",
-      "Infrastructure as Code"
-    ],
+    "teaches": [ "Flask", "Express" ],
+    "learns": [ "Kubernetes", "Infrastructure as Code" ],
     "rating": 4.9,
     "timezone": "GMT-5"
   },
   {
     "id": "user_094",
     "name": "User_094",
-    "teaches": [
-      "Database Design",
-      "PostgreSQL",
-      "Data Warehousing"
-    ],
-    "learns": [
-      "Cloud Infrastructure",
-      "Terraform",
-      "DevOps"
-    ],
+    "teaches": [ "Database Design", "PostgreSQL", "Data Warehousing" ],
+    "learns": [ "Cloud Infrastructure", "Terraform", "DevOps" ],
     "rating": 4.7,
     "timezone": "GMT+6"
   },
   {
     "id": "user_095",
     "name": "User_095",
-    "teaches": [
-      "Docker",
-      "Kubernetes"
-    ],
-    "learns": [
-      "CSS",
-      "Next.js",
-      "TypeScript"
-    ],
+    "teaches": [ "Docker", "Kubernetes" ],
+    "learns": [ "CSS", "Next.js", "TypeScript" ],
     "rating": 4.9,
     "timezone": "GMT+2"
   },
   {
     "id": "user_096",
     "name": "User_096",
-    "teaches": [
-      "Firebase",
-      "Mobile UI",
-      "Kotlin"
-    ],
-    "learns": [
-      "Machine Learning",
-      "Data Science"
-    ],
+    "teaches": [ "Firebase", "Mobile UI", "Kotlin" ],
+    "learns": [ "Machine Learning", "Data Science" ],
     "rating": 4.2,
     "timezone": "GMT+9"
   },
   {
     "id": "user_097",
     "name": "User_097",
-    "teaches": [
-      "CSS",
-      "JavaScript"
-    ],
-    "learns": [
-      "Terraform",
-      "AWS"
-    ],
+    "teaches": [ "CSS", "JavaScript" ],
+    "learns": [ "Terraform", "AWS" ],
     "rating": 4.7,
     "timezone": "GMT+4"
   },
   {
     "id": "user_098",
     "name": "User_098",
-    "teaches": [
-      "Data Engineering",
-      "Deep Learning",
-      "NLP"
-    ],
-    "learns": [
-      "Azure",
-      "Kubernetes",
-      "Docker"
-    ],
+    "teaches": [ "Data Engineering", "Deep Learning", "NLP" ],
+    "learns": [ "Azure", "Kubernetes", "Docker" ],
     "rating": 4.0,
     "timezone": "GMT+1"
   },
   {
     "id": "user_099",
     "name": "User_099",
-    "teaches": [
-      "Firebase",
-      "Kotlin",
-      "Swift"
-    ],
-    "learns": [
-      "Node.js",
-      "Microservices",
-      "Backend Development"
-    ],
+    "teaches": [ "Firebase", "Kotlin", "Swift" ],
+    "learns": [ "Node.js", "Microservices", "Backend Development" ],
     "rating": 4.6,
     "timezone": "GMT-3"
   },
   {
     "id": "user_100",
     "name": "User_100",
-    "teaches": [
-      "NoSQL",
-      "Database Design"
-    ],
-    "learns": [
-      "Firebase",
-      "iOS Development",
-      "React Native"
-    ],
+    "teaches": [ "NoSQL", "Database Design" ],
+    "learns": [ "Firebase", "iOS Development", "React Native" ],
     "rating": 4.8,
     "timezone": "GMT+8"
   }

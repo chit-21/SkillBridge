@@ -1,4 +1,4 @@
-import { auth } from './firebase';
+import { auth } from './firebaseAdmin';
 import { 
   createUserWithEmailAndPassword, 
   signInWithEmailAndPassword,
