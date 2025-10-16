@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import admin from 'firebase-admin';
-import { listSkills, addSkill } from '@/lib/firestoreService';
+import { listSkills, addSkill } from '../auth/me/firestoreService';
 import type { Skill } from '@/types';
 
 function extractBearerToken(req: NextRequest): string | null {

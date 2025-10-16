@@ -1,12 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server';
-import admin from 'firebase-admin';
-import { getUserProfile } from '../../../../lib/firestoreService';
+import { auth as adminAuth } from './firebaseAdmin.server';
+import { getUserProfile } from './firestoreService';
+
 
 function extractBearerToken(req: NextRequest): string | null {
-  const auth = req.headers.get('authorization') || req.headers.get('Authorization');
-  if (!auth) return null;
-  const [scheme, token] = auth.split(' ');
+  const authHeader = req.headers.get('authorization') || req.headers.get('Authorization');
+  if (!authHeader) return null;
+
+  const [scheme, token] = authHeader.split(' ');
   if (scheme?.toLowerCase() !== 'bearer' || !token) return null;
+
   return token;
 }
 
@@ -17,7 +20,7 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    const decoded = await admin.auth().verifyIdToken(token);
+    const decoded = await adminAuth.verifyIdToken(token);
     const uid = decoded.uid;
 
     const user = await getUserProfile(uid);
@@ -27,6 +30,7 @@ export async function GET(req: NextRequest) {
 
     return NextResponse.json(user);
   } catch (err) {
+    console.error('Error in /api/auth/me:', err);
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 }
