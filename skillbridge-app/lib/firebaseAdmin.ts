@@ -12,13 +12,11 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID
 };
 
-// Initialize Firebase
 const app: FirebaseApp =
   getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
 
 let authInstance: Auth;
 
-// This check is needed to prevent a "Firebase App is not initialized" error during server-side rendering.
 if (typeof window !== 'undefined') {
   authInstance = getAuth(app);
 }
