@@ -204,3 +204,407 @@ _Without this, later phases will either break or require expensive rewrites._
 - React Native mobile app
 - Group learning
 - Real-time language translation
+
+
+
+
+Frontend (Next.js)
+
+Framework: Next.js (React-based)
+
+Styling: TailwindCSS
+
+Auth: Uses Firebase Client SDK
+
+Communication: Calls backend REST APIs (and optionally WebSocket endpoints)
+
+Deployment: Vercel
+
+Role: Handles UI — registration, profile, skills, matches, chat/video UI, reviews, etc.
+
+Backend (Node.js + Express)
+
+Framework: Express
+
+Auth: Uses Firebase Admin SDK to verify tokens from frontend
+
+Database: Firestore
+
+Real-time: Socket.io (for chat signaling)
+
+ML/Matching: Python microservice (FastAPI/Flask) for graph-based user matching
+
+Caching: Redis
+
+Deployment: Railway/Render
+
+Role: Provides APIs for users, skills, matches, sessions, reviews, etc.
+
+
+
+
+
+# SkillBridge — Backend: MVP Controllers, Routes, Folder Structure & Scaffolding Commands
+
+> This document contains a recommended folder structure, a complete list of MVP controllers and routes, models/collections, middleware & services, and the shell commands to scaffold the project (Node.js/Express backend + Python matching microservice).
+
+---
+
+## Project overview (MVP features)
+
+* User registration & auth
+* Profile creation
+* Skill posting (teach / learn tags + proficiency)
+* Matching (pairing teacher & learner, match score)
+* Scheduling sessions (chat / video)
+* Basic chat & signaling for WebRTC
+* Reviews & ratings
+* Points/credits system
+* Save conversation transcript & compute weighted relevance score
+* Notifications (email / push)
+
+---
+
+## Top-level folder structure
+
+skillbridge/
+│
+├── .env.local                     # Frontend + server route environment variables
+├── .gitignore
+├── package.json                   # Root package manager config (workspaces if needed)
+├── README.md
+│
+├── next.config.js                 # Next.js configuration
+├── tailwind.config.js
+├── tsconfig.json
+│
+└── src/
+    ├── app/                       # ⚛️ Next.js App Router (pages + server routes)
+    │   ├── layout.tsx             # Root layout (header, footer, theme)
+    │   ├── page.tsx               # Landing page
+    │
+    │   ├── login/
+    │   │   └── page.tsx           # Login page
+    │
+    │   ├── register/
+    │   │   └── page.tsx           # Registration page
+    │
+    │   ├── dashboard/
+    │   │   └── page.tsx           # Matched users + sessions overview
+    │
+    │   ├── profile/
+    │   │   └── page.tsx           # Manage skills + user profile
+    │
+    │   ├── match/
+    │   │   └── page.tsx           # View matched results
+    │
+    │   ├── sessions/
+    │   │   └── page.tsx           # Scheduled learning sessions
+    │
+    │   ├── reviews/
+    │   │   └── page.tsx           # User reviews
+    │
+    │   ├── api/                   # ✅ Server-side routes (built-in Next.js API)
+    │   │   ├── auth/              # Authentication routes
+    │   │   │   ├── register/route.ts  # Registers a new user
+    │   │   │   └── login/route.ts     # Logs in a user
+    │   │   │
+    │   │   ├── skills/route.ts    # CRUD operations for skills
+    │   │   ├── match/route.ts     # Fetch matched users or recommendations
+    │   │   ├── sessions/route.ts  # Schedule, update, fetch sessions
+    │   │   └── reviews/route.ts   # Submit and fetch reviews
+    │
+    ├── components/                 # 🧩 Reusable UI components
+    │   ├── Navbar.tsx
+    │   ├── Button.tsx
+    │   ├── InputField.tsx
+    │   ├── SkillCard.tsx
+    │   └── MatchList.tsx
+    │
+    ├── contexts/                   # 🧠 React Context API (global state)
+    │   ├── AuthContext.tsx
+    │   ├── SocketContext.tsx
+    │   └── ThemeContext.tsx
+    │
+    ├── lib/                        # 🔧 Frontend + server helper logic
+    │   ├── firebase.ts             # Firebase client SDK setup
+    │   ├── apiClient.ts            # Fetch/axios instance for frontend calls
+    │   ├── authService.ts          # Login/register logic
+    │   └── utils.ts                # Generic helper functions
+    │
+    ├── services/                   # 🔍 Shared business logic (used by API routes)
+    │   ├── matchService.ts         # Matchmaking logic (ML calls or algorithm)
+    │   ├── notificationService.ts  # Push/email notifications
+    │   └── pointsService.ts        # Gamification logic
+    │
+    ├── sockets/                    # 💬 Real-time handlers
+    │   └── chatSocket.ts           # WebSocket logic for chat
+    │
+    ├── ml-service/                 # 🤖 Optional Python microservice
+    │   ├── app.py
+    │   ├── requirements.txt
+    │   └── services/
+    │       └── match_engine.py     # Graph-based matching logic
+    │
+    └── scripts/                    # ⚙️ Utility scripts
+        ├── seedData.ts             # Populate DB with fake data
+        ├── cronJobs.ts             # Scheduled tasks (e.g., match refresh)
+        └── deploy.sh               # Automated deployment
+
+---
+
+## Collections (Firestore) / Models summary
+
+MVP Firestore Collections / Models
+Collection	Fields	Notes
+users	{ uid, name, email, timezone, profile, teachingSkills: [{skill, level}], learningSkills: [{skill, level}], points }	Core user profile and skills
+skills	{ skillId, name, category }	Simple skill catalog
+matches	{ matchId, userA, userB, score, status, createdAt }	User-to-user match results
+sessions	{ sessionId, matchId, scheduledAt, status, roomId }	Learning sessions
+reviews	{ reviewId, sessionId, fromUser, toUser, rating, comments }	Session reviews
+points	{ userId, balance }	Points for gamification (simplified)
+
+##MVP Controllers / Responsibilities
+
+Controller	Purpose
+auth.controller.ts	Register, login, logout (Firebase auth)
+user.controller.ts	Get/update profile, add/remove skills
+skill.controller.ts	CRUD for skills (create/search/list)
+match.controller.ts	Trigger matchmaking, get matches, accept/reject match
+session.controller.ts	Schedule session, start/end session
+review.controller.ts	Post review, get user reviews
+points.controller.ts	Get balance, update points
+
+Note: No transcript scoring or external ML service yet — keep it simple for MVP.
+
+MVP API Routes (Next.js style)
+/api/auth/register      POST  # { name, email, password, timezone }
+/api/auth/login         POST  # { email, password }
+/api/auth/logout        POST
+
+/api/users/me           GET   # protected: get profile
+/api/users/me           PUT   # update profile
+/api/users/me/skills    POST  # add skill
+/api/users/me/skills/:skillId DELETE # remove skill
+
+/api/skills             GET   # list/search skills
+/api/skills             POST  # create skill
+/api/skills/:skillId    GET   # get skill
+
+/api/match/trigger      POST  # trigger matching
+/api/match/:userId      GET   # get matches
+/api/match/:matchId/accept POST
+/api/match/:matchId/reject POST
+
+/api/sessions/          POST  # schedule/start session
+/api/sessions/:id       GET   # session details
+/api/sessions/:id/complete POST # end session
+
+/api/reviews/           POST  # post review
+/api/reviews/user/:userId GET # get user reviews
+
+/api/points/me          GET   # get points balance
+
+MVP Middleware
+Middleware	Purpose
+auth.middleware.ts	Verify Firebase token, attach req.user
+error.middleware.ts	Catch and format errors
+
+Optional: validate.middleware.ts if you want simple request validation (Joi or Zod).
+
+MVP Services
+Service	Purpose
+authService.ts	Register/login/logout logic
+userService.ts	Read/update profile, add/remove skills
+skillService.ts	CRUD and search skills
+matchService.ts	Matchmaking logic (basic scoring)
+sessionService.ts	Schedule, start, end sessions
+reviewService.ts	Post and fetch reviews
+pointsService.ts	Manage user points
+
+Keep services simple: just DB read/write and basic logic. No external APIs for now.
+
+Simplified MVP Flow
+
+User signs up / logs in → auth.controller → authService → Firebase + Firestore users.
+
+User adds skills → user.controller → userService → update teachingSkills / learningSkills.
+
+Trigger matchmaking → match.controller → matchService → compute simple score, save matches.
+
+Schedule session → session.controller → sessionService → create session record.
+
+Post review → review.controller → reviewService → save review.
+
+Update/get points → points.controller → pointsService.
+
+## Middleware (recommended)
+
+* `auth.middleware.js` — verify Firebase token and set req.user
+* `validate.middleware.js` — request body validation (Joi or express-validator)
+* `error.middleware.js` — centralized error handler
+* `rateLimiter.middleware.js` — basic request rate limiting (express-rate-limit)
+
+---
+
+## Services & Responsibilities
+
+* **firebase.service.js** — wrap firebase-admin operations (getUser, createUserRecord, read/write collections)
+* **matchClient.service.js** — HTTP client to the Python matching microservice; provides `computeMatchesForUser(userId)`
+* **transcript.service.js** — save transcript, call NLP processor (if any) to compute relevance
+* **points.service.js** — credit/debit logic and transaction history
+* **notification.service.js** — send email / push via FCM
+* **webrtc.service.js** — helper to generate/join rooms, token handling (if using SFU/turn servers)
+
+---
+
+## Transcript scoring (high-level)
+
+* Save the session transcript to `transcripts` collection.
+* Run `transcriptProcessor.js` job (on `jobs/`) which:
+
+  1. Cleans text, extracts keywords.
+  2. Compares keywords with session skill tags.
+  3. Computes relevance score (e.g., keyword-match ratio × conversation-length factor).
+  4. Combine relevance score with learner feedback (weighted ratio configurable in `constants.js`) to compute final points awarded.
+
+---
+
+## Python matching microservice (brief)
+
+* `app.py` (Flask or FastAPI) exposes endpoints:
+
+  * `POST /compute-match` — accepts list of user profiles & skills, returns pairings and scores
+  * `GET  /status`
+* Implementation uses `networkx` to construct a bipartite graph and run maximum weight matching.
+
+---
+
+## Recommended npm packages (server)
+
+* runtime: `express`, `firebase-admin`, `cors`, `dotenv`, `axios`, `socket.io`, `ioredis` or `redis`, `bull` (for jobs/queues), `express-rate-limit`, `helmet`, `winston` (logging)
+* development: `nodemon`, `eslint`, `prettier`
+
+## Python match-service packages
+
+* `flask` or `fastapi`, `uvicorn` (if FastAPI), `networkx`, `pydantic` (if FastAPI), `requests`
+
+---
+
+## Scaffolding commands (Linux / macOS / WSL / Git Bash on Windows)
+
+### 1) Create project root + Node init
+
+```bash
+mkdir skillbridge-backend && cd skillbridge-backend
+git init
+npm init -y
+```
+
+### 2) Install Node dependencies
+
+```bash
+npm i express cors dotenv axios firebase-admin socket.io ioredis bull helmet express-rate-limit
+npm i -D nodemon eslint prettier
+```
+
+### 3) Create folders & files (single-liner)
+
+```bash
+mkdir -p src/{config,routes,controllers,services,middlewares,models,utils,socket,jobs} scripts python-match-service
+touch src/index.js src/config/{firebase.js,redis.js,logger.js} \
+  src/routes/{auth.routes.js,user.routes.js,skill.routes.js,match.routes.js,session.routes.js,review.routes.js,points.routes.js,transcript.routes.js,health.routes.js} \
+  src/controllers/{auth.controller.js,user.controller.js,skill.controller.js,match.controller.js,session.controller.js,review.controller.js,points.controller.js,transcript.controller.js,health.controller.js} \
+  src/services/{firebase.service.js,matchClient.service.js,webrtc.service.js,transcript.service.js,notification.service.js,points.service.js} \
+  src/middlewares/{auth.middleware.js,validate.middleware.js,error.middleware.js,rateLimiter.middleware.js} \
+  src/models/{user.model.js,skill.model.js,match.model.js,session.model.js,review.model.js,points.model.js,transcript.model.js} \
+  src/utils/{scoreUtils.js,timeUtils.js,constants.js} src/socket/{index.js,chat.handlers.js,signaling.handlers.js} src/jobs/{scheduler.js,transcriptProcessor.js} scripts/deploy.sh .env.example README.md
+```
+
+### 4) Python matching microservice scaffold
+
+```bash
+cd python-match-service
+python3 -m venv venv
+source venv/bin/activate       # use venv\Scripts\activate on Windows
+pip install flask networkx requests
+cat > requirements.txt <<EOF
+flask
+networkx
+requests
+EOF
+# create app file
+cat > app.py <<'PY'
+from flask import Flask, request, jsonify
+import networkx as nx
+app = Flask(__name__)
+
+@app.route('/status')
+def status():
+    return jsonify({'status':'ok'})
+
+@app.route('/compute-match', methods=['POST'])
+def compute_match():
+    data = request.json
+    # TODO: implement matcher using networkx
+    return jsonify({'pairs': []})
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=8001)
+PY
+```
+
+### 5) Add basic `src/index.js` starter
+
+```bash
+cat > src/index.js <<'JS'
+require('dotenv').config();
+const express = require('express');
+const cors = require('cors');
+const http = require('http');
+const { initSocket } = require('./socket');
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+
+// mount routes (examples)
+app.use('/api/v1/auth', require('./routes/auth.routes'));
+app.use('/api/v1/users', require('./routes/user.routes'));
+
+const server = http.createServer(app);
+initSocket(server);
+
+const PORT = process.env.PORT || 4000;
+server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+JS
+```
+
+### 6) Example `.env.example`
+
+```
+PORT=4000
+FIREBASE_PROJECT_ID=
+FIREBASE_CLIENT_EMAIL=
+FIREBASE_PRIVATE_KEY=
+REDIS_URL=redis://localhost:6379
+MATCH_SERVICE_URL=http://localhost:8001
+JWT_SECRET=
+```
+
+---
+
+## Next steps (practical order to implement)
+
+1. Scaffold repo (run commands above).
+2. Implement Firebase config and auth middleware.
+3. Implement `auth.controller` (register/login) & `user.controller` CRUD.
+4. Implement skill posting endpoints and search.
+5. Stand up Python match service with a simple `/compute-match` (dummy) and integrate matchClient.
+6. Add session scheduling + socket.io basic chat + signaling.
+7. Implement transcript save + background job to compute relevance score and points.
+8. Add tests for key endpoints.
+
+---
+
+If you want, I can now: generate ready-to-paste starter files for each controller/route (with boilerplate code), or produce a Postman collection for all endpoints. Tell me which you prefer and I'll scaffold the files content next.
