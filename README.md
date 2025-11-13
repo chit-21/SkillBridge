@@ -412,17 +412,7 @@ error.middleware.ts	Catch and format errors
 
 Optional: validate.middleware.ts if you want simple request validation (Joi or Zod).
 
-MVP Services
-Service	Purpose
-authService.ts	Register/login/logout logic
-userService.ts	Read/update profile, add/remove skills
-skillService.ts	CRUD and search skills
-matchService.ts	Matchmaking logic (basic scoring)
-sessionService.ts	Schedule, start, end sessions
-reviewService.ts	Post and fetch reviews
-pointsService.ts	Manage user points
 
-Keep services simple: just DB read/write and basic logic. No external APIs for now.
 
 Simplified MVP Flow
 
@@ -491,120 +481,140 @@ Update/get points → points.controller → pointsService.
 
 ---
 
-## Scaffolding commands (Linux / macOS / WSL / Git Bash on Windows)
+--------------------------------------------------------------------------------------
 
-### 1) Create project root + Node init
 
-```bash
-mkdir skillbridge-backend && cd skillbridge-backend
-git init
-npm init -y
-```
 
-### 2) Install Node dependencies
 
-```bash
-npm i express cors dotenv axios firebase-admin socket.io ioredis bull helmet express-rate-limit
-npm i -D nodemon eslint prettier
-```
+What You’ve Completed So Far
+🧩 Core Setup
 
-### 3) Create folders & files (single-liner)
+✅ Monorepo structure (/app for Next.js frontend + /backend or service layer)
 
-```bash
-mkdir -p src/{config,routes,controllers,services,middlewares,models,utils,socket,jobs} scripts python-match-service
-touch src/index.js src/config/{firebase.js,redis.js,logger.js} \
-  src/routes/{auth.routes.js,user.routes.js,skill.routes.js,match.routes.js,session.routes.js,review.routes.js,points.routes.js,transcript.routes.js,health.routes.js} \
-  src/controllers/{auth.controller.js,user.controller.js,skill.controller.js,match.controller.js,session.controller.js,review.controller.js,points.controller.js,transcript.controller.js,health.controller.js} \
-  src/services/{firebase.service.js,matchClient.service.js,webrtc.service.js,transcript.service.js,notification.service.js,points.service.js} \
-  src/middlewares/{auth.middleware.js,validate.middleware.js,error.middleware.js,rateLimiter.middleware.js} \
-  src/models/{user.model.js,skill.model.js,match.model.js,session.model.js,review.model.js,points.model.js,transcript.model.js} \
-  src/utils/{scoreUtils.js,timeUtils.js,constants.js} src/socket/{index.js,chat.handlers.js,signaling.handlers.js} src/jobs/{scheduler.js,transcriptProcessor.js} scripts/deploy.sh .env.example README.md
-```
+✅ Firebase Admin SDK configured (adminAuth, adminDb)
 
-### 4) Python matching microservice scaffold
+✅ Environment variables set up for Firebase credentials
 
-```bash
-cd python-match-service
-python3 -m venv venv
-source venv/bin/activate       # use venv\Scripts\activate on Windows
-pip install flask networkx requests
-cat > requirements.txt <<EOF
-flask
-networkx
-requests
-EOF
-# create app file
-cat > app.py <<'PY'
-from flask import Flask, request, jsonify
-import networkx as nx
-app = Flask(__name__)
+✅ Auth middleware (requireAuthOrRespond) for protected endpoints
 
-@app.route('/status')
-def status():
-    return jsonify({'status':'ok'})
+👤 Auth Service
 
-@app.route('/compute-match', methods=['POST'])
-def compute_match():
-    data = request.json
-    # TODO: implement matcher using networkx
-    return jsonify({'pairs': []})
+✅ Register/Login (with Admin SDK)
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8001)
-PY
-```
+✅ Middleware verifies tokens for secure routes
 
-### 5) Add basic `src/index.js` starter
+✅ users collection managed with name, email, timezone, profile info
 
-```bash
-cat > src/index.js <<'JS'
-require('dotenv').config();
-const express = require('express');
-const cors = require('cors');
-const http = require('http');
-const { initSocket } = require('./socket');
+⚙️ Skill/Match System
 
-const app = express();
-app.use(cors());
-app.use(express.json());
+✅ skillsService.ts with CRUD (done)
 
-// mount routes (examples)
-app.use('/api/v1/auth', require('./routes/auth.routes'));
-app.use('/api/v1/users', require('./routes/user.routes'));
+✅ matchService.ts integrated with Python microservice (done)
 
-const server = http.createServer(app);
-initSocket(server);
+💬 Session + Review + Points
 
-const PORT = process.env.PORT || 4000;
-server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-JS
-```
+✅ sessionService.ts — schedule & complete sessions
 
-### 6) Example `.env.example`
+✅ reviewService.ts — post and fetch reviews
 
-```
-PORT=4000
-FIREBASE_PROJECT_ID=
-FIREBASE_CLIENT_EMAIL=
-FIREBASE_PRIVATE_KEY=
-REDIS_URL=redis://localhost:6379
-MATCH_SERVICE_URL=http://localhost:8001
-JWT_SECRET=
-```
+✅ pointsService.ts — manage credits/debits
 
----
+✅ API routes for sessions, reviews, and points (done above)
 
-## Next steps (practical order to implement)
+So at this point, your backend feature layer is complete (core version).
 
-1. Scaffold repo (run commands above).
-2. Implement Firebase config and auth middleware.
-3. Implement `auth.controller` (register/login) & `user.controller` CRUD.
-4. Implement skill posting endpoints and search.
-5. Stand up Python match service with a simple `/compute-match` (dummy) and integrate matchClient.
-6. Add session scheduling + socket.io basic chat + signaling.
-7. Implement transcript save + background job to compute relevance score and points.
-8. Add tests for key endpoints.
 
----
 
-If you want, I can now: generate ready-to-paste starter files for each controller/route (with boilerplate code), or produce a Postman collection for all endpoints. Tell me which you prefer and I'll scaffold the files content next.
+
+
+Next Phase — Phase C: Frontend Integration (Dashboard + UI Flow)
+
+Here’s the recommended order:
+
+1️⃣ User Dashboard (Frontend)
+
+Create a dashboard page /dashboard that shows:
+
+User’s points balance (GET /api/points/me)
+
+User’s upcoming sessions (GET /api/sessions)
+
+Recent reviews (GET /api/reviews/user/:id)
+
+Option to trigger match (POST /api/match or /api/match/trigger)
+
+👉 This page becomes the main home after login.
+
+2️⃣ Matchmaking Flow (UI)
+
+Page: /match
+
+Button: “Find Matches”
+→ Calls your triggerMatch() endpoint
+→ Displays the returned list of potential matches with scores
+→ Allow “Schedule Session” button beside each match
+
+Clicking it opens a date-time picker → calls /api/sessions POST
+
+3️⃣ Session Management UI
+
+Page: /sessions
+
+Tabs: Upcoming, Completed
+
+For each upcoming session:
+
+Show roomId
+
+“Join Session” (link or mock video call room)
+
+For completed sessions:
+
+Button: “Leave a Review”
+
+Clicking opens a modal → POST /api/reviews
+
+4️⃣ Reviews UI
+
+Page: /reviews
+
+Show reviews received + average rating (computed client-side)
+
+5️⃣ Points / Gamification 
+
+Display point balance at top (navbar or dashboard widget)
+
+Add rules like:
+points given according to  weighted formula of review plus transcript score ---
+Redeem or milestone badges later
+
+🗂 Folder Structure Suggestion (Frontend)
+src/
+  app/
+    dashboard/
+      page.tsx          → main user dashboard
+    match/
+      page.tsx          → find matches
+    sessions/
+      page.tsx          → list sessions
+    reviews/
+      page.tsx          → list + add reviews
+    api/
+      ...               → (already done)
+  components/
+    DashboardCard.tsx
+    MatchCard.tsx
+    SessionCard.tsx
+    ReviewCard.tsx
+    PointsWidget.tsx
+
+🧠 Phase D -
+
+Once frontend integration is stable:
+
+Feature	Description	Related Services
+🎥 Video Call Integration	Use WebRTC / Daily.co / Agora for real-time sessions	Sessions
+🧾 Transcript Upload	Upload transcript file → store ref in Firestore	Sessions
+🪄 AI Review Summaries	Summarize reviews using OpenAI API	Reviews
+📈 Analytics Page	Admin dashboard for monitoring sessions, matches, ratings	All
+📢 Notifications	Use Firebase Cloud Messaging (already possible)	Points/Sessions
