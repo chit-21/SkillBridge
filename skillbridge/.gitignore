@@ -41,3 +41,10 @@ pnpm-debug.log*
 # typescript build artifacts
 *.tsbuildinfo
 next-env.d.ts
+
+
+# Firebase admin key
+skillbridge-matcher/serviceAccount.json
+serviceAccount.json
+*.json
+!package.json
