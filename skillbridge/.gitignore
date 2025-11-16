@@ -43,8 +43,3 @@ pnpm-debug.log*
 next-env.d.ts
 
 
-# Firebase admin key
-skillbridge-matcher/serviceAccount.json
-serviceAccount.json
-*.json
-!package.json
