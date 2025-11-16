@@ -92,7 +92,6 @@ def evaluate_algorithm(name: str, rec_pairs: List[Tuple[str, str]], good_pairs: 
     print(f"Recall: {r:.2f}")
     print(f"F1-Score: {f1:.2f}")
     print(f"MRR: {mrr:.2f}")
-    print(f"Hit Rate@{k}: {hit_rate:.2f}")
     print()
 
 
