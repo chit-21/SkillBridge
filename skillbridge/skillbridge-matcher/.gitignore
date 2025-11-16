@@ -1,5 +1,0 @@
-# Firebase admin key
-skillbridge-matcher/serviceAccount.json
-serviceAccount.json
-*.json
-!package.json
