@@ -5,12 +5,11 @@ import { requireAuth } from "@/middlewares/auth.middlewares";
 
 export async function POST(req: NextRequest) {
   try {
-    // Require authentication
-    const user = await requireAuth(req);
-
-    // Trigger matching for the authenticated user
-    const matches = await triggerMatch(user.uid);
-
+    const user = await requireAuth(req.headers);
+    let body: any = {};
+    try { body = await req.json(); } catch {}
+    const { query, intent } = body || {};
+    const matches = await triggerMatch(user.uid, query, intent);
     return new Response(JSON.stringify(matches), { status: 200 });
   } catch (err: any) {
     return jsonError(err.message);
