@@ -10387,7 +10387,7 @@ if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
 ;
 else {
     try {
-        api = __turbopack_context__.r("[project]/node_modules/@opentelemetry/api/build/esm/index.js [app-rsc] (ecmascript)");
+        api = __turbopack_context__.r("[project]/skillbridge/node_modules/@opentelemetry/api/build/esm/index.js [app-rsc] (ecmascript)");
     } catch (err) {
         api = __turbopack_context__.r("[project]/skillbridge/node_modules/next/dist/compiled/@opentelemetry/api/index.js [app-rsc] (ecmascript)");
     }

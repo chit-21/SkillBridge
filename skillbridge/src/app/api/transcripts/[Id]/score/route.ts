@@ -3,11 +3,12 @@ import { computeRelevanceScore } from "@/services/transcriptService";
 import { requireAuth } from "@/middlewares/auth.middlewares";
 import { jsonError } from "@/lib/utils";
 
-export async function GET(req: NextRequest, { params }: { params: { id: string } }) {
+export async function GET(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
     await requireAuth(req.headers);
-    const score = await computeRelevanceScore(params.id);
-    return new Response(JSON.stringify({ transcriptId: params.id, relevanceScore: score }), { status: 200 });
+    const { id } = await params;
+    const score = await computeRelevanceScore(id);
+    return new Response(JSON.stringify({ transcriptId: id, relevanceScore: score }), { status: 200 });
   } catch (err: any) {
     return jsonError(err.message);
   }

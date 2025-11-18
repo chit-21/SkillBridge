@@ -1,8 +1,17 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
   "/api/auth/login/route": "app/api/auth/login/route.js",
-  "/api/auth/register/route": "app/api/auth/register/route.js",
   "/api/match/trigger/route": "app/api/match/trigger/route.js",
+  "/api/points/me/route": "app/api/points/me/route.js",
   "/api/profile/route": "app/api/profile/route.js",
-  "/test-login/page": "app/test-login/page.js"
+  "/api/reviews/user/[userId]/route": "app/api/reviews/user/[userId]/route.js",
+  "/api/sessions/route": "app/api/sessions/route.js",
+  "/api/users/[userId]/route": "app/api/users/[userId]/route.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/login/page": "app/login/page.js",
+  "/matches/page": "app/matches/page.js",
+  "/page": "app/page.js",
+  "/profile/page": "app/profile/page.js",
+  "/reviews/page": "app/reviews/page.js",
+  "/sessions/page": "app/sessions/page.js"
 }

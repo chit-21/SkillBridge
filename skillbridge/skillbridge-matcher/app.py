@@ -125,15 +125,20 @@ def compute_match():
     query = data.get("query")
     mode = data.get("mode")  # "learn" or "teach"
 
+    print(f"[DEBUG] Received request - query: {query}, mode: {mode}")
+
     if not query:
+        print("[ERROR] Missing query parameter")
         return jsonify({"error": "query is required"}), 400
 
     if mode not in ("learn", "teach"):
+        print(f"[ERROR] Invalid mode: {mode}")
         return jsonify({"error": "mode must be 'learn' or 'teach'"}), 400
 
     users = load_users()
     matches = search_skill(query, mode, users)
 
+    print(f"[DEBUG] Found {len(matches)} matches")
     return jsonify(matches), 200
 
 

@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { createUserWithEmailAndPassword, updateProfile, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { clientAuth } from "@/lib/firebase";
 import { useAuth } from "@/contexts/AuthContext";
 import { Button } from "@/components/Button";
@@ -53,14 +53,16 @@ export default function RegisterPage() {
     setIsLoading(true);
 
     try {
-      const userCredential = await createUserWithEmailAndPassword(clientAuth, formData.email, formData.password);
-      await updateProfile(userCredential.user, { displayName: formData.name });
-      const idToken = await userCredential.user.getIdToken();
-
+      // Call backend API to create user with Admin SDK
       const response = await fetch("/api/auth/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: formData.name, email: formData.email, timezone: formData.timezone, idToken }),
+        body: JSON.stringify({ 
+          name: formData.name, 
+          email: formData.email, 
+          password: formData.password,
+          timezone: formData.timezone 
+        }),
       });
 
       if (!response.ok) {
@@ -68,13 +70,22 @@ export default function RegisterPage() {
         throw new Error(errorData.message || "Registration failed");
       }
 
+      // Now sign in with the client SDK
+      const userCredential = await signInWithEmailAndPassword(clientAuth, formData.email, formData.password);
+      
+      // User is now authenticated, redirect to dashboard
       router.push("/dashboard");
     } catch (err: any) {
       let errorMessage = "Registration failed. Please try again.";
-      if (err.code === "auth/email-already-in-use") errorMessage = "This email is already registered. Please sign in instead.";
-      else if (err.code === "auth/weak-password") errorMessage = "Password is too weak. Please use a stronger password.";
-      else if (err.code === "auth/invalid-email") errorMessage = "Invalid email address. Please check and try again.";
-      else if (err.message) errorMessage = err.message;
+      if (err.message.includes("email-already-in-use") || err.message.includes("already exists")) {
+        errorMessage = "This email is already registered. Please sign in instead.";
+      } else if (err.message.includes("weak-password")) {
+        errorMessage = "Password is too weak. Please use a stronger password.";
+      } else if (err.message.includes("invalid-email")) {
+        errorMessage = "Invalid email address. Please check and try again.";
+      } else if (err.message) {
+        errorMessage = err.message;
+      }
       setError(errorMessage);
     } finally {
       setIsLoading(false);

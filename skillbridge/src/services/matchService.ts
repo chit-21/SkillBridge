@@ -7,17 +7,20 @@ const MATCHES_COLLECTION = "matches";
 export async function triggerMatch(userId: string, query?: string, intent?: "teaching" | "learning") {
   try {
     const ok = await ensureMicroservice();
-    if (ok) {
+    if (ok && query && intent) {
+      // Convert intent to mode: "learning" -> "learn", "teaching" -> "teach"
+      const mode = intent === "learning" ? "learn" : "teach";
+      
       const response = await fetch("http://localhost:5000/compute-match", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ userId, query, intent }),
+        body: JSON.stringify({ query, mode }),
       });
       if (response.ok) {
         const matchResults = await response.json();
         const savedMatches = [] as any[];
-        for (const match of matchResults as { userB: string; score: number }[]) {
-          const matchObj = await saveMatchResult({ userA: userId, userB: match.userB, score: match.score, status: "pending" });
+        for (const match of matchResults as { userId: string; score: number }[]) {
+          const matchObj = await saveMatchResult({ userA: userId, userB: match.userId, score: match.score, status: "pending" });
           savedMatches.push(matchObj);
         }
         return savedMatches;

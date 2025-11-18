@@ -18,6 +18,21 @@ export async function createSession(matchId: string, scheduledAt: string) {
   return sessionData;
 }
 
+// Get user sessions
+export async function getUserSessions(userId: string) {
+  const snapshot = await adminDb
+    .collection(SESSIONS_COLLECTION)
+    .where("matchId", "==", userId)
+    .orderBy("createdAt", "desc")
+    .get();
+
+  if (snapshot.empty) {
+    return [];
+  }
+
+  return snapshot.docs.map((doc) => doc.data());
+}
+
 // Complete session and attach transcript reference
 export async function completeSession(sessionId: string, transcriptRef: string) {
   const sessionRef = adminDb.collection(SESSIONS_COLLECTION).doc(sessionId);
